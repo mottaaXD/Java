@@ -39,7 +39,7 @@ public class TelevisaoTeste {
             escolha = input.nextLine();
             if(escolha.equalsIgnoreCase("S")){
                 tv2.setLigada(false);
-                System.out.println("Desligando....\nUltimas informações da TV:" + tv2.toString2());
+                System.out.println("Desligando....\nUltimas informações da TV:" + tv2.toString());
             }
             else{
                 System.out.println(tv2.toString());
