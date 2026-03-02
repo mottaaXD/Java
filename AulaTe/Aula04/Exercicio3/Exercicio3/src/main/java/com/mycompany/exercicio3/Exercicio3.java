@@ -15,7 +15,6 @@ public class Exercicio3 {
         lista2.addAll(lista1);
 
         System.out.print(lista2);
-        lista2.remove(0);
-        System.out.print(lista2);
+
     }
 }
