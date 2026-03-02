@@ -12,7 +12,7 @@ public class Exercicio3 {
         lista1.add("Oi");
         lista1.add("Tchau");
         
-        lista2.addAll(lista1);
+        lista2 = lista1;
 
         System.out.print(lista2);
         
