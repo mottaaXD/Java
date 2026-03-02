@@ -11,7 +11,7 @@ public class Exercicio2 {
         ArrayList<String> c2 = new ArrayList<>();
     
         c1.add("Azul");
-        c1.add("vermelho");
+        c1.add("Vermelho");
         c1.add("Amarelo");
         
         c2.add("Amarelo");
@@ -22,6 +22,14 @@ public class Exercicio2 {
             System.out.println("Conteudo igual");
         } else{
             System.out.println("Conteudo diferente");
+        }
+        
+        for(int i = 0; i < c1.size(); i++){
+            if(c1.contains(c2.get(i))){
+                System.out.println("Cores iguais" + c2.get(i));
+            } else{
+                System.out.println("Cores diferentes " + c2.get(i));
+            }
         }
     }
     
