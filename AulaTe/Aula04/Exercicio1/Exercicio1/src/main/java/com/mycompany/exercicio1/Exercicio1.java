@@ -16,12 +16,12 @@ public class Exercicio1 {
         }
         */
         for(int i = 0; i < 10; i++){
-            System.out.println("Digite a medida do sensor" + (i+1));
+            System.out.println("Digite a medida do laser" + (i+1));
             l[i] = new Laser(input.nextFloat());
             input.nextLine();
         }
         
-        System.out.println("Medidas dos sensores: ");
+        System.out.println("Medidas dos lasers: ");
         for(int i = 0; i < 10; i++){
             System.out.println("Laser" + (i+1) + ":" + l[i].getMedida());
         }
