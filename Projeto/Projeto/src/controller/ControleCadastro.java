@@ -1,0 +1,44 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package controller;
+
+import dao.Conexao;
+import dao.UsuarioDAO;
+import java.awt.CardLayout;
+
+import model.Usuario;
+import view.TelaInicio;
+
+import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.sql.SQLException;
+
+public class ControleCadastro {
+    private TelaInicio ti;
+
+    public ControleCadastro(TelaInicio ti) {
+        this.ti = ti;
+    }
+    
+    public void salvarUsuario(){
+        String nome = ti.getTxt_nome().getText();
+        String senha = ti.getTxt_senha().getText();
+        Usuario usuario = new Usuario(nome, senha);
+        
+        Conexao conexao = new Conexao();
+        
+        try{
+            Connection conn = conexao.getConnection();
+            UsuarioDAO dao = new UsuarioDAO(conn);
+            dao.inserir(usuario);
+            JOptionPane.showMessageDialog(ti, "Usuario Cadastrado!","Aviso", 
+                                        JOptionPane.INFORMATION_MESSAGE);
+        }catch (SQLException ex) {
+            JOptionPane.showMessageDialog(ti, "Usuário não cadastrado!","Erro", 
+                                        JOptionPane.ERROR_MESSAGE);
+        }
+        
+    }
+}

@@ -3,8 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-import controller.ControleTelaInicio;
+import controller.ControleTrocarTela;
+import controller.ControleCadastro;
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 /**
  *
  * @author uniflualves
@@ -16,14 +20,84 @@ public class TelaInicio extends javax.swing.JFrame {
      */
     public TelaInicio() {
         initComponents();
-        ci = new ControleTelaInicio(this);
+        ci = new ControleTrocarTela(this);
+        cc = new ControleCadastro(this);
     }
     
-    private ControleTelaInicio ci;
+    private ControleTrocarTela ci;
+    private ControleCadastro cc;
 
    public JPanel getPainelInicio(){
        return painelInicio;
    }
+
+    public JButton getBt_cadastro() {
+        return bt_cadastro;
+    }
+
+    public JLabel getLbl_nome() {
+        return lbl_nome;
+    }
+
+    public JLabel getLbl_senha() {
+        return lbl_senha;
+    }
+
+    public JPanel getTelaCadastro() {
+        return telaCadastro;
+    }
+
+    public JPanel getTelaLogin() {
+        return telaLogin;
+    }
+
+    public JPanel getTelaMenu() {
+        return telaMenu;
+    }
+
+    public JTextField getTxt_nome() {
+        return txt_nome;
+    }
+
+    public JTextField getTxt_senha() {
+        return txt_senha;
+    }
+
+    public void setBt_cadastro(JButton bt_cadastro) {
+        this.bt_cadastro = bt_cadastro;
+    }
+
+    public void setLbl_nome(JLabel lbl_nome) {
+        this.lbl_nome = lbl_nome;
+    }
+
+    public void setLbl_senha(JLabel lbl_senha) {
+        this.lbl_senha = lbl_senha;
+    }
+
+    public void setPainelInicio(JPanel painelInicio) {
+        this.painelInicio = painelInicio;
+    }
+
+    public void setTelaCadastro(JPanel telaCadastro) {
+        this.telaCadastro = telaCadastro;
+    }
+
+    public void setTelaLogin(JPanel telaLogin) {
+        this.telaLogin = telaLogin;
+    }
+
+    public void setTelaMenu(JPanel telaMenu) {
+        this.telaMenu = telaMenu;
+    }
+
+    public void setTxt_nome(JTextField txt_nome) {
+        this.txt_nome = txt_nome;
+    }
+
+    public void setTxt_senha(JTextField txt_senha) {
+        this.txt_senha = txt_senha;
+    }
    
    
     
@@ -44,6 +118,7 @@ public class TelaInicio extends javax.swing.JFrame {
         lbl_nome = new javax.swing.JLabel();
         txt_senha = new javax.swing.JTextField();
         lbl_senha = new javax.swing.JLabel();
+        bt_cadastrar = new javax.swing.JButton();
         telaLogin = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -81,19 +156,31 @@ public class TelaInicio extends javax.swing.JFrame {
 
         lbl_senha.setText("senha");
 
+        bt_cadastrar.setText("Cadastrar");
+        bt_cadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_cadastrarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout telaCadastroLayout = new javax.swing.GroupLayout(telaCadastro);
         telaCadastro.setLayout(telaCadastroLayout);
         telaCadastroLayout.setHorizontalGroup(
             telaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(telaCadastroLayout.createSequentialGroup()
-                .addGap(160, 160, 160)
                 .addGroup(telaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbl_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_senha))
-                .addGap(31, 31, 31)
-                .addGroup(telaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txt_senha, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
-                    .addComponent(txt_nome))
+                    .addGroup(telaCadastroLayout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addGroup(telaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_senha))
+                        .addGap(31, 31, 31)
+                        .addGroup(telaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txt_senha, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
+                            .addComponent(txt_nome)))
+                    .addGroup(telaCadastroLayout.createSequentialGroup()
+                        .addGap(222, 222, 222)
+                        .addComponent(bt_cadastrar)))
                 .addContainerGap(264, Short.MAX_VALUE))
         );
         telaCadastroLayout.setVerticalGroup(
@@ -107,7 +194,9 @@ public class TelaInicio extends javax.swing.JFrame {
                 .addGroup(telaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl_senha))
-                .addContainerGap(184, Short.MAX_VALUE))
+                .addGap(61, 61, 61)
+                .addComponent(bt_cadastrar)
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
         painelInicio.add(telaCadastro, "cadastro");
@@ -142,6 +231,10 @@ public class TelaInicio extends javax.swing.JFrame {
     private void bt_cadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_cadastroActionPerformed
         ci.trocarCadastro();
     }//GEN-LAST:event_bt_cadastroActionPerformed
+
+    private void bt_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_cadastrarActionPerformed
+        cc.salvarUsuario();
+    }//GEN-LAST:event_bt_cadastrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,6 +272,7 @@ public class TelaInicio extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_cadastrar;
     private javax.swing.JButton bt_cadastro;
     private javax.swing.JLabel lbl_nome;
     private javax.swing.JLabel lbl_senha;

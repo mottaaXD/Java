@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package main;
-import controller.ControleTelaInicio;
+import controller.ControleTrocarTela;
 import view.TelaInicio;
 /**
  *

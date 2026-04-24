@@ -17,21 +17,19 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 
-public class ControleTelaInicio {
+public class ControleTrocarTela {
     private TelaInicio telaInicio;
     private Usuario usuario;
     private CardLayout cl;
 
     
     
-    public ControleTelaInicio(TelaInicio telaInicio) {
+    public ControleTrocarTela(TelaInicio telaInicio) {
         this.telaInicio = telaInicio;
         this.cl = (CardLayout) telaInicio.getPainelInicio().getLayout();
     }
     
-    public void inicio(){
-        cl.show(telaInicio.getPainelInicio(), "menu");
-    }
+    
     
     public void trocarCadastro(){
         cl.show(telaInicio.getPainelInicio(), "cadastro");
