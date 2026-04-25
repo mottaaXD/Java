@@ -29,13 +29,15 @@ public class UsuarioDAO {
     }
     
     public void inserir(Usuario usuario) throws SQLException{
-        String sql = "insert into usuarios (nome, senha) values ('"
-                      + usuario.getNome()    + "', '" 
-                      + usuario.getSenha()   + "')";
+        String sql = "INSERT INTO usuarios (nome, senha) VALUES (?, ?)";
+    
         PreparedStatement statement = conn.prepareStatement(sql);
-        statement.execute();
-        conn.close();
-    }
+        statement.setString(1, usuario.getNome());
+        statement.setString(2, usuario.getSenha());
+    
+        statement.executeUpdate();
+    conn.close();
+}
     
     
 }

@@ -233,7 +233,10 @@ public class TelaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_cadastroActionPerformed
 
     private void bt_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_cadastrarActionPerformed
-        cc.salvarUsuario();
+        String nome = this.getTxt_nome().getText();
+        String senha = this.getTxt_senha().getText();
+        cc.salvarUsuario(nome, senha);
+        
     }//GEN-LAST:event_bt_cadastrarActionPerformed
 
     /**

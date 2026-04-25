@@ -22,9 +22,10 @@ public class ControleCadastro {
         this.ti = ti;
     }
     
-    public void salvarUsuario(){
-        String nome = ti.getTxt_nome().getText();
-        String senha = ti.getTxt_senha().getText();
+    public void salvarUsuario(String nomeL, String senhaL){
+        
+        String nome = nomeL;
+        String senha = senhaL;
         Usuario usuario = new Usuario(nome, senha);
         
         Conexao conexao = new Conexao();
@@ -36,8 +37,8 @@ public class ControleCadastro {
             JOptionPane.showMessageDialog(ti, "Usuario Cadastrado!","Aviso", 
                                         JOptionPane.INFORMATION_MESSAGE);
         }catch (SQLException ex) {
-            JOptionPane.showMessageDialog(ti, "Usuário não cadastrado!","Erro", 
-                                        JOptionPane.ERROR_MESSAGE);
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(ti, "Usuário não cadastrado!");
         }
         
     }
