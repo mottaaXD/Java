@@ -5,6 +5,7 @@
 package view;
 import controller.ControleTrocarTela;
 import controller.ControleCadastro;
+import controller.ControleLogin;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -22,10 +23,12 @@ public class TelaInicio extends javax.swing.JFrame {
         initComponents();
         ci = new ControleTrocarTela(this);
         cc = new ControleCadastro(this);
+        cl = new ControleLogin(this);
     }
     
     private ControleTrocarTela ci;
     private ControleCadastro cc;
+    private ControleLogin cl;
 
    public JPanel getPainelInicio(){
        return painelInicio;
@@ -159,6 +162,7 @@ public class TelaInicio extends javax.swing.JFrame {
         bt_voltarInicio2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(600, 383));
 
         painelInicio.setLayout(new java.awt.CardLayout());
 
@@ -191,7 +195,7 @@ public class TelaInicio extends javax.swing.JFrame {
                     .addComponent(bt_cadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(bt_login, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(260, Short.MAX_VALUE))
+                .addContainerGap(212, Short.MAX_VALUE))
         );
         telaInicioLayout.setVerticalGroup(
             telaInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,18 +211,12 @@ public class TelaInicio extends javax.swing.JFrame {
 
         painelInicio.add(telaInicio, "inicio");
 
-        telaCadastro.setLayout(new java.awt.GridLayout());
-        telaCadastro.add(txt_nome);
-
         lbl_nome.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_nome.setText("Nome de Exibição");
-        telaCadastro.add(lbl_nome);
-        telaCadastro.add(txt_senha);
 
         lbl_senha.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_senha.setText("Senha");
         lbl_senha.setToolTipText("");
-        telaCadastro.add(lbl_senha);
 
         bt_cadastrar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         bt_cadastrar.setText("Cadastrar");
@@ -227,12 +225,9 @@ public class TelaInicio extends javax.swing.JFrame {
                 bt_cadastrarActionPerformed(evt);
             }
         });
-        telaCadastro.add(bt_cadastrar);
-        telaCadastro.add(txt_usuarioNome);
 
         lbl_nome1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_nome1.setText("Usuário");
-        telaCadastro.add(lbl_nome1);
 
         bt_voltarInicio.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         bt_voltarInicio.setText("Voltar");
@@ -241,7 +236,52 @@ public class TelaInicio extends javax.swing.JFrame {
                 bt_voltarInicioActionPerformed(evt);
             }
         });
-        telaCadastro.add(bt_voltarInicio);
+
+        javax.swing.GroupLayout telaCadastroLayout = new javax.swing.GroupLayout(telaCadastro);
+        telaCadastro.setLayout(telaCadastroLayout);
+        telaCadastroLayout.setHorizontalGroup(
+            telaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(telaCadastroLayout.createSequentialGroup()
+                .addGap(109, 109, 109)
+                .addGroup(telaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(telaCadastroLayout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addComponent(bt_cadastrar))
+                    .addGroup(telaCadastroLayout.createSequentialGroup()
+                        .addGroup(telaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lbl_nome)
+                            .addComponent(lbl_senha)
+                            .addComponent(lbl_nome1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(telaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(telaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txt_usuarioNome, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                                .addComponent(txt_nome))
+                            .addComponent(txt_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(bt_voltarInicio))
+                .addContainerGap(129, Short.MAX_VALUE))
+        );
+        telaCadastroLayout.setVerticalGroup(
+            telaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(telaCadastroLayout.createSequentialGroup()
+                .addContainerGap(77, Short.MAX_VALUE)
+                .addGroup(telaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_nome1)
+                    .addComponent(txt_usuarioNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(telaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_nome)
+                    .addComponent(txt_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(telaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_senha)
+                    .addComponent(txt_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addComponent(bt_cadastrar)
+                .addGap(57, 57, 57)
+                .addComponent(bt_voltarInicio)
+                .addGap(46, 46, 46))
+        );
 
         painelInicio.add(telaCadastro, "cadastro");
 
@@ -255,6 +295,11 @@ public class TelaInicio extends javax.swing.JFrame {
 
         bt_logar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         bt_logar.setText("Entrar");
+        bt_logar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_logarActionPerformed(evt);
+            }
+        });
 
         bt_voltarInicio2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         bt_voltarInicio2.setText("Voltar");
@@ -286,7 +331,7 @@ public class TelaInicio extends javax.swing.JFrame {
                     .addGroup(telaLoginLayout.createSequentialGroup()
                         .addGap(58, 58, 58)
                         .addComponent(bt_voltarInicio2)))
-                .addContainerGap(140, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
         telaLoginLayout.setVerticalGroup(
             telaLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -314,7 +359,7 @@ public class TelaInicio extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(painelInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -347,6 +392,10 @@ public class TelaInicio extends javax.swing.JFrame {
     private void bt_voltarInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_voltarInicioActionPerformed
         ci.trocarInicio();
     }//GEN-LAST:event_bt_voltarInicioActionPerformed
+
+    private void bt_logarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_logarActionPerformed
+        cl.logarUsuario();
+    }//GEN-LAST:event_bt_logarActionPerformed
 
     /**
      * @param args the command line arguments
