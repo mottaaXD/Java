@@ -22,11 +22,12 @@ public class ControleCadastro {
         this.ti = ti;
     }
     
-    public void salvarUsuario(String nomeL, String senhaL){
+    public void salvarUsuario(String usuarioNomeL, String nomeL, String senhaL){
         
+        String usuarioNome = usuarioNomeL;
         String nome = nomeL;
         String senha = senhaL;
-        Usuario usuario = new Usuario(nome, senha);
+        Usuario usuario = new Usuario(usuarioNome, nome, senha);
         
         Conexao conexao = new Conexao();
         

@@ -9,11 +9,16 @@ package model;
  * @author uniflualves
  */
 public class Usuario {
-    private String nome, senha;
+    private String usuarioNome, nome, senha;
 
-    public Usuario(String nome, String senha) {
+    public Usuario(String usuarioNome, String nome, String senha) {
+        this.usuarioNome = usuarioNome;
         this.nome = nome;
         this.senha = senha;
+    }
+    
+    public String getUsuarioNome(){
+        return usuarioNome;
     }
 
     public String getNome() {
@@ -22,6 +27,10 @@ public class Usuario {
 
     public String getSenha() {
         return senha;
+    }
+    
+    public void setUsuario(String usuario){
+        this.usuarioNome = usuarioNome;
     }
 
     public void setNome(String nome) {

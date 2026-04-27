@@ -18,10 +18,11 @@ public class UsuarioDAO {
     }
     
     public ResultSet consultar(Usuario usuario) throws SQLException{
-        String sql = "SELECT * FROM usuarios WHERE nome = ? AND senha = ?";
+        String sql = "SELECT * FROM userdata WHERE usuario = ? AND nome = ? AND senha = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
-        statement.setString(1, usuario.getNome());
-        statement.setString(2, usuario.getSenha());
+        statement.setString(1, usuario.getUsuarioNome());
+        statement.setString(2, usuario.getNome());
+        statement.setString(3, usuario.getSenha());
         statement.execute();
         ResultSet resultado = statement.getResultSet();
         conn.close();
@@ -29,11 +30,12 @@ public class UsuarioDAO {
     }
     
     public void inserir(Usuario usuario) throws SQLException{
-        String sql = "INSERT INTO usuarios (nome, senha) VALUES (?, ?)";
+        String sql = "INSERT INTO userdata (usuario, nome, senha) VALUES (?, ?, ?)";
     
         PreparedStatement statement = conn.prepareStatement(sql);
-        statement.setString(1, usuario.getNome());
-        statement.setString(2, usuario.getSenha());
+        statement.setString(1, usuario.getUsuarioNome());
+        statement.setString(2, usuario.getNome());
+        statement.setString(3, usuario.getSenha());
     
         statement.executeUpdate();
     conn.close();

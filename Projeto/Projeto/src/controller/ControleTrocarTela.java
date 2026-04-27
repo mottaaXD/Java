@@ -34,4 +34,12 @@ public class ControleTrocarTela {
     public void trocarCadastro(){
         cl.show(telaInicio.getPainelInicio(), "cadastro");
     }
+    
+    public void trocarInicio(){
+        cl.show(telaInicio.getPainelInicio(), "inicio");
+    }
+    
+    public void trocarLogin(){
+        cl.show(telaInicio.getPainelInicio(), "login");
+    }
 }
