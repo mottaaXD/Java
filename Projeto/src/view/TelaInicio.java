@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
 /**
  *
  * @author uniflualves
@@ -123,6 +124,8 @@ public class TelaInicio extends javax.swing.JFrame {
     public void setTxt_usuarioLogin(JTextField txt_usuarioLogin){
         this.txt_usuarioLogin = txt_usuarioLogin;
     }
+    
+    
     
     public void setTxt_senhaLogin(JTextField txt_senhaLogin){
         this.txt_senhaLogin = txt_senhaLogin;
@@ -359,7 +362,7 @@ public class TelaInicio extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
+            .addComponent(painelInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -10,11 +10,13 @@ import java.awt.CardLayout;
 
 import model.Usuario;
 import view.TelaInicio;
+import view.TelaPrincipal;
 
 import javax.swing.JOptionPane;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 
 /**
  *
@@ -22,6 +24,7 @@ import java.sql.SQLException;
  */
 public class ControleLogin {
     private TelaInicio ti;
+
     
     public ControleLogin(TelaInicio ti) {
         this.ti = ti;
@@ -29,7 +32,7 @@ public class ControleLogin {
     
     public void logarUsuario(){
         Usuario usuario;
-        usuario = new Usuario(ti.getTxt_usuarioNome().getText(), ti.getTxt_nome().getText(), ti.getTxt_senha().getText());
+        usuario = new Usuario(ti.getTxt_usuarioLogin().getText(), null, ti.getTxt_senhaLogin().getText());
         
         Conexao conexao = new Conexao();
         
@@ -41,7 +44,12 @@ public class ControleLogin {
                 JOptionPane.showMessageDialog(ti, "Login efetuado", "Aviso", 
                                                 JOptionPane.INFORMATION_MESSAGE);
                 String usuarioNome = res.getString("usuario");
+                String nome = res.getString("nome");
                 String senha = res.getString("senha");
+                TelaPrincipal telaLogado = new TelaPrincipal(new Usuario(usuarioNome, nome, senha));
+                telaLogado.setVisible(true);
+                ti.setVisible(false);
+                
                 
             } else{
                

@@ -11,6 +11,7 @@ import java.awt.CardLayout;
 
 import model.Usuario;
 import view.TelaInicio;
+import view.TelaPrincipal;
 
 import javax.swing.JOptionPane;
 import java.sql.Connection;
@@ -21,13 +22,17 @@ public class ControleTrocarTela {
     private TelaInicio telaInicio;
     private Usuario usuario;
     private CardLayout cl;
-
+    private CardLayout cl2;
+    private TelaPrincipal tp;
     
     
     public ControleTrocarTela(TelaInicio telaInicio) {
         this.telaInicio = telaInicio;
         this.cl = (CardLayout) telaInicio.getPainelInicio().getLayout();
+
     }
+    
+    
     
     
     
