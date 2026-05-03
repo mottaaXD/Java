@@ -39,8 +39,18 @@ public class UsuarioDAO {
         statement.setString(3, usuario.getSenha());
     
         statement.executeUpdate();
-    conn.close();
-}
+        conn.close();
+    }
+    
+    public void atualizarDados(Usuario usuario) throws SQLException{
+        String sql = "update userdata set nome = ?, senha =  ? where usuario = ?";
+        PreparedStatement statement = conn.prepareStatement(sql);
+        statement.setString(1, usuario.getNome());
+        statement.setString(2, usuario.getSenha());
+        statement.setString(3, usuario.getUsuarioNome());
+        statement.execute();
+        conn.close();
+    }
     
     
 }

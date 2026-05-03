@@ -4,11 +4,16 @@
  */
 package view;
 
-import controller.ControleLogado;
+import controller.ControlePrincipal;
+import controller.ControleTrocarTela;
+
 import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import model.Usuario;
+
+import controller.ControleAlterarLogin;
+import javax.swing.JTextField;
 
 /**
  *
@@ -24,17 +29,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public TelaPrincipal(Usuario usuario) {
         initComponents();
         lbl_usuarioLogado.setText((usuario.getNome()));
-        cl = new ControleLogado(this, usuario);
+        cp = new ControlePrincipal(this, usuario);
+        cal = new ControleAlterarLogin(this, usuario);
+        trocarTela = new ControleTrocarTela(this);
     }
     
-    private ControleLogado cl;
+    private ControlePrincipal cp;
+    private ControleAlterarLogin cal;
+    private ControleTrocarTela trocarTela;
 
     public static Logger getLogger() {
         return logger;
     }
 
-    public ControleLogado getCl() {
-        return cl;
+    public ControlePrincipal getCp() {
+        return cp;
     }
 
     public JLabel getjLabel1() {
@@ -45,6 +54,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
         return lbl_usuarioLogado;
     }
 
+    public JTextField getTxt_novaSenha() {
+        return txt_novaSenha;
+    }
+
+    public JTextField getTxt_novoNome() {
+        return txt_novoNome;
+    }
+    
+    
+
     public JPanel getPainelCardPrincipal() {
         return painelCardPrincipal;
     }
@@ -53,8 +72,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         return telaMenuPrincipal;
     }
 
-    public void setCl(ControleLogado cl) {
-        this.cl = cl;
+  
+    public void setCp(ControlePrincipal cp) {
+        this.cp = cp;
     }
 
     public void setjLabel1(JLabel jLabel1) {
@@ -73,6 +93,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.telaMenuPrincipal = telaMenuPrincipal;
     }
 
+    public void setTxt_novaSenha(JTextField txt_novaSenha) {
+        this.txt_novaSenha = txt_novaSenha;
+    }
+
+    public void setTxt_novoNome(JTextField txt_novoNome) {
+        this.txt_novoNome = txt_novoNome;
+    }
+    
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -87,6 +116,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         telaMenuPrincipal = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         lbl_usuarioLogado = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        telaAlterar = new javax.swing.JPanel();
+        novaseha = new javax.swing.JLabel();
+        txt_novaSenha = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        novonome = new javax.swing.JLabel();
+        txt_novoNome = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        bt_voltarMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,15 +135,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         lbl_usuarioLogado.setFont(new java.awt.Font("Segoe UI", 0, 44)); // NOI18N
 
+        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jButton2.setText("Trocar Senha");
+        jButton2.addActionListener(this::jButton2ActionPerformed);
+
         javax.swing.GroupLayout telaMenuPrincipalLayout = new javax.swing.GroupLayout(telaMenuPrincipal);
         telaMenuPrincipal.setLayout(telaMenuPrincipalLayout);
         telaMenuPrincipalLayout.setHorizontalGroup(
             telaMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(telaMenuPrincipalLayout.createSequentialGroup()
-                .addGap(234, 234, 234)
-                .addComponent(jLabel1)
-                .addGap(40, 40, 40)
-                .addComponent(lbl_usuarioLogado)
+                .addGroup(telaMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(telaMenuPrincipalLayout.createSequentialGroup()
+                        .addGap(234, 234, 234)
+                        .addComponent(jLabel1)
+                        .addGap(40, 40, 40)
+                        .addComponent(lbl_usuarioLogado))
+                    .addGroup(telaMenuPrincipalLayout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(jButton2)))
                 .addContainerGap(335, Short.MAX_VALUE))
         );
         telaMenuPrincipalLayout.setVerticalGroup(
@@ -115,10 +162,83 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGroup(telaMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(lbl_usuarioLogado))
-                .addContainerGap(453, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 270, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(144, 144, 144))
         );
 
         painelCardPrincipal.add(telaMenuPrincipal, "menuPrincipal");
+
+        novaseha.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        novaseha.setText("Nova Senha:");
+
+        txt_novaSenha.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jButton1.setText("Alterar");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+
+        novonome.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        novonome.setText("Novo Nome:");
+
+        txt_novoNome.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setText("Caso deixe um espaço vazio, ele será preenchido pelo dado antigo.");
+
+        bt_voltarMenu.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        bt_voltarMenu.setText("Voltar");
+        bt_voltarMenu.addActionListener(this::bt_voltarMenuActionPerformed);
+
+        javax.swing.GroupLayout telaAlterarLayout = new javax.swing.GroupLayout(telaAlterar);
+        telaAlterar.setLayout(telaAlterarLayout);
+        telaAlterarLayout.setHorizontalGroup(
+            telaAlterarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(telaAlterarLayout.createSequentialGroup()
+                .addGroup(telaAlterarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(telaAlterarLayout.createSequentialGroup()
+                        .addGap(250, 250, 250)
+                        .addGroup(telaAlterarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(telaAlterarLayout.createSequentialGroup()
+                                .addComponent(novonome)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_novoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(telaAlterarLayout.createSequentialGroup()
+                                .addComponent(novaseha)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_novaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(telaAlterarLayout.createSequentialGroup()
+                        .addGap(344, 344, 344)
+                        .addComponent(jButton1))
+                    .addGroup(telaAlterarLayout.createSequentialGroup()
+                        .addGap(134, 134, 134)
+                        .addComponent(jLabel2))
+                    .addGroup(telaAlterarLayout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(bt_voltarMenu)))
+                .addContainerGap(156, Short.MAX_VALUE))
+        );
+        telaAlterarLayout.setVerticalGroup(
+            telaAlterarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(telaAlterarLayout.createSequentialGroup()
+                .addGap(123, 123, 123)
+                .addGroup(telaAlterarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(novonome)
+                    .addComponent(txt_novoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(telaAlterarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(novaseha)
+                    .addComponent(txt_novaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addGap(85, 85, 85)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bt_voltarMenu)
+                .addContainerGap(115, Short.MAX_VALUE))
+        );
+
+        painelCardPrincipal.add(telaAlterar, "telaAlterar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -133,6 +253,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        cal.atualizarDados();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        trocarTela.trocarAlterarSenha();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void bt_voltarMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_voltarMenuActionPerformed
+        trocarTela.trocarMenu();
+    }//GEN-LAST:event_bt_voltarMenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,9 +292,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_voltarMenu;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel lbl_usuarioLogado;
+    private javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel lbl_usuarioLogado;
+    private javax.swing.JLabel novaseha;
+    private javax.swing.JLabel novonome;
     private javax.swing.JPanel painelCardPrincipal;
+    private javax.swing.JPanel telaAlterar;
     private javax.swing.JPanel telaMenuPrincipal;
+    private javax.swing.JTextField txt_novaSenha;
+    private javax.swing.JTextField txt_novoNome;
     // End of variables declaration//GEN-END:variables
 }

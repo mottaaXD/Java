@@ -29,7 +29,7 @@ public class Usuario {
         return senha;
     }
     
-    public void setUsuario(String usuario){
+    public void setUsuarioNome(String usuarioNome){
         this.usuarioNome = usuarioNome;
     }
 

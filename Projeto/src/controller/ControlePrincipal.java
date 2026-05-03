@@ -14,13 +14,14 @@ import view.TelaPrincipal;
  *
  * @author Usuario
  */
-public class ControleLogado {
+public class ControlePrincipal {
     private TelaPrincipal tp;
     private Usuario usuarioLogado;
-    public ControleLogado(TelaPrincipal tp, Usuario usuario) {
+    public ControlePrincipal(TelaPrincipal tp, Usuario usuario) {
         this.tp = tp;
         this.usuarioLogado = usuario;
     }
     
     
+  
 }
