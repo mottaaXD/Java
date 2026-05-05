@@ -3,6 +3,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+
+import controller.ControleAlterarLogin;
+import controller.ControleTrocarTela;
+import controller.ControlePrincipal;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 import model.Usuario;
 /**
  *
@@ -15,8 +24,108 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     public TelaPrincipal(Usuario usuario) {
         initComponents();
-        
+        lbl_usuarioLogado.setText((usuario.getNome()));
+        this.getTxt_novoNome().setText(usuario.getNome());
+        cp = new ControlePrincipal(this, usuario);
+        cal = new ControleAlterarLogin(this, usuario);
+        trocarTela = new ControleTrocarTela(this);
     }
+    
+    private ControlePrincipal cp;
+    private ControleAlterarLogin cal;
+    private ControleTrocarTela trocarTela;
+
+    public ControlePrincipal getCp() {
+        return cp;
+    }
+
+    public ControleAlterarLogin getCal() {
+        return cal;
+    }
+
+    public ControleTrocarTela getTrocarTela() {
+        return trocarTela;
+    }
+
+    public JButton getBt_alterarLogin() {
+        return bt_alterarTelaLogin;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public JLabel getLbl_usuarioLogado() {
+        return lbl_usuarioLogado;
+    }
+
+    public JPanel getPainelAlterarLogin() {
+        return painelAlterarLogin;
+    }
+
+    public JPanel getPainelCardPrincipal() {
+        return painelCardPrincipal;
+    }
+
+    public JPanel getPainelMenuPrincipal() {
+        return painelMenuPrincipal;
+    }
+
+    public JTextField getTxt_novaSenha() {
+        return txt_novaSenha;
+    }
+
+    public JTextField getTxt_novoNome() {
+        return txt_novoNome;
+    }
+    
+    
+
+    public void setCp(ControlePrincipal cp) {
+        this.cp = cp;
+    }
+
+    public void setCal(ControleAlterarLogin cal) {
+        this.cal = cal;
+    }
+
+    public void setTrocarTela(ControleTrocarTela trocarTela) {
+        this.trocarTela = trocarTela;
+    }
+
+    public void setBt_alterarLogin(JButton bt_alterarLogin) {
+        this.bt_alterarTelaLogin = bt_alterarLogin;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public void setLbl_usuarioLogado(JLabel lbl_usuarioLogado) {
+        this.lbl_usuarioLogado = lbl_usuarioLogado;
+    }
+
+    public void setPainelAlterarLogin(JPanel painelAlterarLogin) {
+        this.painelAlterarLogin = painelAlterarLogin;
+    }
+
+    public void setPainelCardPrincipal(JPanel painelCardPrincipal) {
+        this.painelCardPrincipal = painelCardPrincipal;
+    }
+
+    public void setPainelMenuPrincipal(JPanel painelMenuPrincipal) {
+        this.painelMenuPrincipal = painelMenuPrincipal;
+    }
+
+    public void setTxt_novaSenha(JTextField txt_novaSenha) {
+        this.txt_novaSenha = txt_novaSenha;
+    }
+
+    public void setTxt_novoNome(JTextField txt_novoNome) {
+        this.txt_novoNome = txt_novoNome;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -31,6 +140,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         painelMenuPrincipal = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         lbl_usuarioLogado = new javax.swing.JLabel();
+        bt_alterarTelaLogin = new javax.swing.JButton();
+        painelAlterarLogin = new javax.swing.JPanel();
+        txt_novoNome = new javax.swing.JTextField();
+        lbl_novoNome = new javax.swing.JLabel();
+        lbl_novaSenha = new javax.swing.JLabel();
+        txt_novaSenha = new javax.swing.JTextField();
+        bt_alterar = new javax.swing.JButton();
+        bt_voltarMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,16 +158,29 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         lbl_usuarioLogado.setFont(new java.awt.Font("Segoe UI", 0, 38)); // NOI18N
 
+        bt_alterarTelaLogin.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        bt_alterarTelaLogin.setText("Alterar Login");
+        bt_alterarTelaLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_alterarTelaLoginActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout painelMenuPrincipalLayout = new javax.swing.GroupLayout(painelMenuPrincipal);
         painelMenuPrincipal.setLayout(painelMenuPrincipalLayout);
         painelMenuPrincipalLayout.setHorizontalGroup(
             painelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelMenuPrincipalLayout.createSequentialGroup()
-                .addGap(134, 134, 134)
-                .addComponent(jLabel1)
-                .addGap(73, 73, 73)
-                .addComponent(lbl_usuarioLogado)
-                .addContainerGap(255, Short.MAX_VALUE))
+                .addGroup(painelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelMenuPrincipalLayout.createSequentialGroup()
+                        .addGap(175, 175, 175)
+                        .addComponent(jLabel1)
+                        .addGap(37, 37, 37)
+                        .addComponent(lbl_usuarioLogado))
+                    .addGroup(painelMenuPrincipalLayout.createSequentialGroup()
+                        .addGap(217, 217, 217)
+                        .addComponent(bt_alterarTelaLogin)))
+                .addContainerGap(250, Short.MAX_VALUE))
         );
         painelMenuPrincipalLayout.setVerticalGroup(
             painelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -59,16 +189,85 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGroup(painelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(lbl_usuarioLogado))
-                .addContainerGap(378, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 257, Short.MAX_VALUE)
+                .addComponent(bt_alterarTelaLogin)
+                .addGap(82, 82, 82))
         );
 
         painelCardPrincipal.add(painelMenuPrincipal, "menuPrincipal");
+
+        txt_novoNome.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        lbl_novoNome.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbl_novoNome.setText("Novo Nome:");
+
+        lbl_novaSenha.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbl_novaSenha.setText("Nova Senha");
+
+        txt_novaSenha.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        bt_alterar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        bt_alterar.setText("Alterar Login");
+        bt_alterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_alterarActionPerformed(evt);
+            }
+        });
+
+        bt_voltarMenu.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        bt_voltarMenu.setText("Voltar");
+        bt_voltarMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_voltarMenuActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout painelAlterarLoginLayout = new javax.swing.GroupLayout(painelAlterarLogin);
+        painelAlterarLogin.setLayout(painelAlterarLoginLayout);
+        painelAlterarLoginLayout.setHorizontalGroup(
+            painelAlterarLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelAlterarLoginLayout.createSequentialGroup()
+                .addGroup(painelAlterarLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelAlterarLoginLayout.createSequentialGroup()
+                        .addGap(164, 164, 164)
+                        .addGroup(painelAlterarLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lbl_novaSenha)
+                            .addComponent(lbl_novoNome))
+                        .addGap(18, 18, 18)
+                        .addGroup(painelAlterarLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bt_alterar)
+                            .addComponent(txt_novoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_novaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(painelAlterarLoginLayout.createSequentialGroup()
+                        .addGap(99, 99, 99)
+                        .addComponent(bt_voltarMenu)))
+                .addContainerGap(128, Short.MAX_VALUE))
+        );
+        painelAlterarLoginLayout.setVerticalGroup(
+            painelAlterarLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelAlterarLoginLayout.createSequentialGroup()
+                .addGap(84, 84, 84)
+                .addGroup(painelAlterarLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_novoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_novoNome))
+                .addGap(18, 18, 18)
+                .addGroup(painelAlterarLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_novaSenha)
+                    .addComponent(txt_novaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(118, 118, 118)
+                .addComponent(bt_alterar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addComponent(bt_voltarMenu)
+                .addGap(78, 78, 78))
+        );
+
+        painelCardPrincipal.add(painelAlterarLogin, "telaAlterar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelCardPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 646, Short.MAX_VALUE)
+            .addComponent(painelCardPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -78,45 +277,66 @@ public class TelaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void bt_alterarTelaLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_alterarTelaLoginActionPerformed
+        trocarTela.trocarAlterarLogin();
+    }//GEN-LAST:event_bt_alterarTelaLoginActionPerformed
+
+    private void bt_voltarMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_voltarMenuActionPerformed
+        trocarTela.trocarMenu();
+    }//GEN-LAST:event_bt_voltarMenuActionPerformed
+
+    private void bt_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_alterarActionPerformed
+        cal.atualizarDados();
+        
+    }//GEN-LAST:event_bt_alterarActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaPrincipal().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new TelaPrincipal().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_alterar;
+    private javax.swing.JButton bt_alterarTelaLogin;
+    private javax.swing.JButton bt_voltarMenu;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lbl_novaSenha;
+    private javax.swing.JLabel lbl_novoNome;
     private javax.swing.JLabel lbl_usuarioLogado;
+    private javax.swing.JPanel painelAlterarLogin;
     private javax.swing.JPanel painelCardPrincipal;
     private javax.swing.JPanel painelMenuPrincipal;
+    private javax.swing.JTextField txt_novaSenha;
+    private javax.swing.JTextField txt_novoNome;
     // End of variables declaration//GEN-END:variables
 }

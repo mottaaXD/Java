@@ -30,6 +30,7 @@ public class ControleTrocarTela {
         this.telaInicio = telaInicio;
         this.cl = (CardLayout) telaInicio.getPainelInicio().getLayout();
     }
+
     
     public ControleTrocarTela(TelaPrincipal tp){
         this.tp = tp;
@@ -52,7 +53,8 @@ public class ControleTrocarTela {
     
     
     //Trocar Telas da tela Principal
-    public void trocarAlterarSenha(){
+    public void trocarAlterarLogin(){
+       
         cl2.show(tp.getPainelCardPrincipal(), "telaAlterar");
     }
     

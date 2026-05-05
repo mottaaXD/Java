@@ -30,6 +30,7 @@ public class ControleAlterarLogin {
     }
     
     public void atualizarDados(){
+        
         String nome = usuario.getNome();
         String novoNome = tp.getTxt_novoNome().getText();
         
@@ -45,6 +46,9 @@ public class ControleAlterarLogin {
         usuario.setNome(novoNome);
         usuario.setSenha(novaSenha);
         
+        tp.getTxt_novaSenha().setText("");
+        tp.getTxt_novoNome().setText(usuario.getNome());
+        
         Conexao conexao = new Conexao();
         try{
             Connection conn = conexao.getConnection();
@@ -52,7 +56,7 @@ public class ControleAlterarLogin {
             dao.atualizarDados(usuario);
             tp.getLbl_usuarioLogado().setText(usuario.getNome());
             
-            JOptionPane.showMessageDialog(tp, "Senha de Usuário atualizada com Sucesso!", 
+            JOptionPane.showMessageDialog(tp, "Login atualizado com Sucesso!", 
                                         "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }catch(SQLException e){
             JOptionPane.showMessageDialog(tp, "Falha de conexão!", 
