@@ -61,4 +61,8 @@ public class ControleTrocarTela {
     public void trocarMenu(){
         cl2.show(tp.getPainelCardPrincipal(), "menuPrincipal");
     }
+    
+    public void trocarPesquisar(){
+        cl2.show(tp.getPainelCardPrincipal(), "pesquisar");
+    }
 }

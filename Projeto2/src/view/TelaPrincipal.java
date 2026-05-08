@@ -7,6 +7,9 @@ package view;
 import controller.ControleAlterarLogin;
 import controller.ControleTrocarTela;
 import controller.ControlePrincipal;
+import controller.ControlePesquisar;
+
+import java.awt.event.KeyEvent;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -29,11 +32,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cp = new ControlePrincipal(this, usuario);
         cal = new ControleAlterarLogin(this, usuario);
         trocarTela = new ControleTrocarTela(this);
+        cPes = new ControlePesquisar(this);
     }
     
     private ControlePrincipal cp;
     private ControleAlterarLogin cal;
     private ControleTrocarTela trocarTela;
+    private ControlePesquisar cPes;
 
     public ControlePrincipal getCp() {
         return cp;
@@ -78,6 +83,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public JTextField getTxt_novoNome() {
         return txt_novoNome;
     }
+
+    public JTextField getTxt_pesquisa() {
+        return txt_pesquisa;
+    }
+    
+    
     
     
 
@@ -151,6 +162,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         bt_voltarMenu = new javax.swing.JButton();
         painelPesquisar = new javax.swing.JPanel();
         txt_pesquisa = new javax.swing.JTextField();
+        bt_voltarMenu2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -173,6 +185,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jButton1.setText("Pesquisar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout painelMenuPrincipalLayout = new javax.swing.GroupLayout(painelMenuPrincipal);
         painelMenuPrincipal.setLayout(painelMenuPrincipalLayout);
@@ -253,7 +270,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addGroup(painelAlterarLoginLayout.createSequentialGroup()
                         .addGap(99, 99, 99)
                         .addComponent(bt_voltarMenu)))
-                .addContainerGap(128, Short.MAX_VALUE))
+                .addContainerGap(134, Short.MAX_VALUE))
         );
         painelAlterarLoginLayout.setVerticalGroup(
             painelAlterarLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -275,21 +292,42 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         painelCardPrincipal.add(painelAlterarLogin, "telaAlterar");
 
+        txt_pesquisa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_pesquisaKeyReleased(evt);
+            }
+        });
+
+        bt_voltarMenu2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        bt_voltarMenu2.setText("Voltar");
+        bt_voltarMenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_voltarMenu2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout painelPesquisarLayout = new javax.swing.GroupLayout(painelPesquisar);
         painelPesquisar.setLayout(painelPesquisarLayout);
         painelPesquisarLayout.setHorizontalGroup(
             painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelPesquisarLayout.createSequentialGroup()
-                .addGap(93, 93, 93)
-                .addComponent(txt_pesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelPesquisarLayout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(bt_voltarMenu2))
+                    .addGroup(painelPesquisarLayout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(txt_pesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(151, Short.MAX_VALUE))
         );
         painelPesquisarLayout.setVerticalGroup(
             painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelPesquisarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txt_pesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(431, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 370, Short.MAX_VALUE)
+                .addComponent(bt_voltarMenu2)
+                .addGap(31, 31, 31))
         );
 
         painelCardPrincipal.add(painelPesquisar, "pesquisar");
@@ -298,11 +336,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelCardPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(painelCardPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelCardPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(painelCardPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -320,6 +364,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cal.atualizarDados();
         
     }//GEN-LAST:event_bt_alterarActionPerformed
+
+    private void bt_voltarMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_voltarMenu2ActionPerformed
+        trocarTela.trocarMenu();
+    }//GEN-LAST:event_bt_voltarMenu2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        trocarTela.trocarPesquisar();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txt_pesquisaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_pesquisaKeyReleased
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            cPes.Pesquisar();
+            System.out.println("Ola");
+        }
+    }//GEN-LAST:event_txt_pesquisaKeyReleased
 
     /**
      * @param args the command line arguments
@@ -360,6 +419,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton bt_alterar;
     private javax.swing.JButton bt_alterarTelaLogin;
     private javax.swing.JButton bt_voltarMenu;
+    private javax.swing.JButton bt_voltarMenu2;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbl_novaSenha;
