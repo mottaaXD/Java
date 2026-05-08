@@ -376,7 +376,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void txt_pesquisaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_pesquisaKeyReleased
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
             cPes.Pesquisar();
-            System.out.println("Ola");
         }
     }//GEN-LAST:event_txt_pesquisaKeyReleased
 
