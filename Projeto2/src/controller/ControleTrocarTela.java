@@ -17,6 +17,8 @@ import javax.swing.JOptionPane;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import controller.ControlePesquisar;
+
 
 public class ControleTrocarTela {
     private TelaInicio telaInicio;
@@ -25,6 +27,7 @@ public class ControleTrocarTela {
     private CardLayout cl2;
     private TelaPrincipal tp;
     
+    private ControlePesquisar cPesc;
     
     public ControleTrocarTela(TelaInicio telaInicio) {
         this.telaInicio = telaInicio;
@@ -35,6 +38,7 @@ public class ControleTrocarTela {
     public ControleTrocarTela(TelaPrincipal tp){
         this.tp = tp;
         this.cl2 = (CardLayout) tp.getPainelCardPrincipal().getLayout();
+        this.cPesc = new ControlePesquisar(tp);
     }
     
     
@@ -63,6 +67,9 @@ public class ControleTrocarTela {
     }
     
     public void trocarPesquisar(){
+        cPesc.mostrarSerie1(false);
+        cPesc.mostrarSerie2(false);
         cl2.show(tp.getPainelCardPrincipal(), "pesquisar");
+        
     }
 }

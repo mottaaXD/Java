@@ -22,9 +22,9 @@ public class SerieDAO {
     }
     
     public ResultSet buscarSerie(String pesquisa) throws SQLException{
-        String sql = "SELECT * FROM series WHERE nome LIKE ?";
+        String sql = "SELECT * FROM series WHERE LOWER(nome) LIKE ?";
         PreparedStatement statement = conn.prepareStatement(sql);
-        statement.setString(1, "%" + pesquisa + "%");
+        statement.setString(1, "%" + pesquisa.toLowerCase() + "%");
         statement.execute();
         ResultSet resultado = statement.getResultSet();
         conn.close();
