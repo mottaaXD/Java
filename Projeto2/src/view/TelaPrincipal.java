@@ -192,7 +192,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         lbl_usuarioLogado = new javax.swing.JLabel();
         bt_alterarTelaLogin = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        bt_pesquisar = new javax.swing.JButton();
         painelAlterarLogin = new javax.swing.JPanel();
         txt_novoNome = new javax.swing.JTextField();
         lbl_novoNome = new javax.swing.JLabel();
@@ -232,11 +232,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton1.setText("Pesquisar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        bt_pesquisar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        bt_pesquisar.setText("Pesquisar");
+        bt_pesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                bt_pesquisarActionPerformed(evt);
             }
         });
 
@@ -254,7 +254,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelMenuPrincipalLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(bt_pesquisar)
                 .addGap(356, 356, 356))
         );
         painelMenuPrincipalLayout.setVerticalGroup(
@@ -270,7 +270,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(bt_alterarTelaLogin)))
                 .addGap(119, 119, 119)
-                .addComponent(jButton1)
+                .addComponent(bt_pesquisar)
                 .addContainerGap(271, Short.MAX_VALUE))
         );
 
@@ -499,9 +499,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         trocarTela.trocarMenu();
     }//GEN-LAST:event_bt_voltarMenu2ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void bt_pesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_pesquisarActionPerformed
         trocarTela.trocarPesquisar();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_bt_pesquisarActionPerformed
 
     private void txt_pesquisaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_pesquisaKeyReleased
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
@@ -560,9 +560,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_alterar;
     private javax.swing.JButton bt_alterarTelaLogin;
+    private javax.swing.JButton bt_pesquisar;
     private javax.swing.JButton bt_voltarMenu;
     private javax.swing.JButton bt_voltarMenu2;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbl_descSerie1;
     private javax.swing.JLabel lbl_descSerie2;
