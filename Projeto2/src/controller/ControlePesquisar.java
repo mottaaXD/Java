@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import view.TelaPrincipal;
-import model.Serie;
+
 
 
 
@@ -47,7 +47,7 @@ public class ControlePesquisar {
     
     
     public void pesquisar(){
-        Serie serie;
+
         
         
         Conexao conexao = new Conexao();
@@ -66,21 +66,27 @@ public class ControlePesquisar {
                 switch(contador){
                     case 1:
                         mostrarSerie1(true);
+                        
                         tp.getLbl_nomeSerie1().setText(res.getString("nome"));
+                        
                         if(res.getString("descricao") == null) tp.getLbl_descSerie1().setText("Sem Descrição");
-                        else tp.getLbl_descSerie1().setText(res.getString("descricao"));                      
+                        else tp.getLbl_descSerie1().setText(res.getString("descricao"));  
+                        
                         tp.getLbl_temporadasSerie1().setText(res.getString("temporadas"));
                         tp.getLbl_temporadasSerie1().setText(res.getString("episodios"));
-                        serie1 = true;
+                        
+
                         break;
                     case 2:
                         mostrarSerie2(true);
                         tp.getLbl_nomeSerie2().setText(res.getString("nome"));
+                        
                         if(res.getString("descricao") == null) tp.getLbl_descSerie2().setText("Sem Descrição");
                         else tp.getLbl_descSerie2().setText(res.getString("descricao"));  
+                        
                         tp.getLbl_temporadasSerie2().setText(res.getString("temporadas"));
                         tp.getLbl_temporadasSerie2().setText(res.getString("episodios"));
-                        serie2 = true;
+
                         break;  
                 }
                 contador++;

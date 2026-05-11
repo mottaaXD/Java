@@ -390,6 +390,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lbl_nomeSerie2.setBackground(new java.awt.Color(255, 255, 255));
         lbl_nomeSerie2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_nomeSerie2.setOpaque(true);
+        lbl_nomeSerie2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lbl_nomeSerie2MouseEntered(evt);
+            }
+        });
 
         lbl_descSerie2.setBackground(new java.awt.Color(255, 255, 255));
         lbl_descSerie2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -512,6 +517,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lbl_nomeSerie1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
  
     }//GEN-LAST:event_lbl_nomeSerie1MouseEntered
+
+    private void lbl_nomeSerie2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_nomeSerie2MouseEntered
+        lbl_nomeSerie2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_lbl_nomeSerie2MouseEntered
 
     /**
      * @param args the command line arguments
