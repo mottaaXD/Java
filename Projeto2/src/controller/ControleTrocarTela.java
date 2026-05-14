@@ -18,6 +18,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 import controller.ControlePesquisar;
+import controller.ControleFilmeResultado;
 
 
 public class ControleTrocarTela {
@@ -26,6 +27,7 @@ public class ControleTrocarTela {
     private CardLayout cl;
     private CardLayout cl2;
     private TelaPrincipal tp;
+    private ControleFilmeResultado cfr;
     
     private ControlePesquisar cPesc;
     
@@ -39,6 +41,7 @@ public class ControleTrocarTela {
         this.tp = tp;
         this.cl2 = (CardLayout) tp.getPainelCardPrincipal().getLayout();
         this.cPesc = new ControlePesquisar(tp);
+        this.cfr = new ControleFilmeResultado(tp);
     }
     
     

@@ -228,7 +228,9 @@ public class ControlePesquisar {
     }
    
    public void clicarFilme1(){
-       if(filme1 != null) cfr.abrirResultado(filme1);
+       if(filme1 != null){
+           cfr.abrirResultado(filme1);
+       }
    }
    
    public void clicarFilme2(){
