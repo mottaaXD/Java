@@ -104,4 +104,12 @@ public class ControleTrocarTela {
         csc.carregarSeriesCurtidos();
         cl2.show(tp.getPainelCardPrincipal(), "seriesCurtidas");
     }
+    
+    public void trocarPlaylists(){
+        cl2.show(tp.getPainelCardPrincipal(), "playlists");
+    }
+    
+    public void trocarConteudoPlay(){
+        cl2.show(tp.getPainelCardPrincipal(), "conteudoPlaylist");
+    }
 }
