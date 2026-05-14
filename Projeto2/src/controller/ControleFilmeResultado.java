@@ -3,29 +3,26 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controller;
-import controller.ControlePesquisar;
-import model.Serie;
 import view.TelaPrincipal;
 
-
+import model.Filme;
 /**
  *
  * @author Usuario
  */
-public class ControleSerieResultado {
+public class ControleFilmeResultado {
     private TelaPrincipal tp;
 
-    public ControleSerieResultado(TelaPrincipal tp){
+    public ControleFilmeResultado(TelaPrincipal tp) {
         this.tp = tp;
     }
-
-    public void abrirResultado(Serie serie){
-        tp.getLbl_serieNomeR().setText(serie.getNome());
-        tp.getLbl_serieDescR().setText(serie.getDesc());
-        tp.getLbl_serieTemporadaR().setText(serie.getTemporadas());
-        tp.getLbl_serieEpisodiosR().setText(serie.getEpisodios());
-        carregarImagem(serie.getImagem());
-        tp.getTrocarTela().trocarSerieResultado();
+    
+    public void abrirResultado(Filme filme){
+        tp.getLbl_filmeNomeR().setText(filme.getNome());
+        tp.getLbl_filmeDescR().setText(filme.getDesc());
+        tp.getLbl_filmeDuracaoR().setText(filme.getDuracao());
+        carregarImagem(filme.getImagem());
+        tp.getTrocarTela().trocarFilmeResultado();
     }
     
     private void carregarImagem(String caminho){
@@ -36,11 +33,11 @@ public class ControleSerieResultado {
             java.awt.Image img = icon.getImage().getScaledInstance(
                     150, 150, java.awt.Image.SCALE_SMOOTH);
 
-            tp.getLbl_serieImagem().setIcon(new javax.swing.ImageIcon(img));
+            tp.getLbl_filmeImagem().setIcon(new javax.swing.ImageIcon(img));
             
         }catch(Exception e){
             System.out.println("Erro ao carregar imagem: " + caminho);
-            tp.getLbl_serieImagem().setIcon(null);
+            tp.getLbl_filmeImagem().setIcon(null);
         }
     }
 }

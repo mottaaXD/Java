@@ -70,6 +70,8 @@ public class ControleTrocarTela {
     public void trocarPesquisar(){
         cPesc.mostrarSerie1(false);
         cPesc.mostrarSerie2(false);
+        cPesc.mostrarFilme1(false);
+        cPesc.mostrarFilme2(false);
         tp.getTxt_pesquisa().setText("");
         cl2.show(tp.getPainelCardPrincipal(), "pesquisar");
         
@@ -78,5 +80,9 @@ public class ControleTrocarTela {
     
     public void trocarSerieResultado(){
         cl2.show(tp.getPainelCardPrincipal(), "serieResultados");
+    }
+    
+    public void trocarFilmeResultado(){
+        cl2.show(tp.getPainelCardPrincipal(), "filmeResultados");
     }
 }
