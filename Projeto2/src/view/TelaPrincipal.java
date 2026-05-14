@@ -100,13 +100,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         return lbl_nomeSerie2;
     }
 
-    public JLabel getLbl_descSerie1() {
-        return lbl_descSerie1;
-    }
 
-    public JLabel getLbl_descSerie2() {
-        return lbl_descSerie2;
-    }
+
+
 
     public JLabel getLbl_episodiosSerie1() {
         return lbl_episodiosSerie1;
@@ -140,13 +136,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         return lbl_serieDescR;
     }
 
-    public JLabel getLbl_textDesc1() {
-        return lbl_textDesc1;
-    }
 
-    public JLabel getLbl_textDesc2() {
-        return lbl_textDesc2;
-    }
+
+
 
     public JLabel getLbl_textEp1() {
         return lbl_textEp1;
@@ -172,13 +164,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         return lbl_textTemporada2;
     }
 
-    public JLabel getLbl_descFilme1() {
-        return lbl_descFilme1;
-    }
 
-    public JLabel getLbl_descFilme2() {
-        return lbl_descFilme2;
-    }
+
+
 
     public JLabel getLbl_duracaoFilme1() {
         return lbl_duracaoFilme1;
@@ -196,13 +184,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         return lbl_nomeFilme2;
     }
 
-    public JLabel getLbl_textDesc3() {
-        return lbl_textDesc3;
-    }
 
-    public JLabel getLbl_textDesc4() {
-        return lbl_textDesc4;
-    }
+
+
 
     public JLabel getLbl_textDuracao1() {
         return lbl_textDuracao1;
@@ -325,32 +309,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
         bt_voltarMenu2 = new javax.swing.JButton();
         lbl_filme = new javax.swing.JLabel();
         lbl_nomeSerie1 = new javax.swing.JLabel();
-        lbl_descSerie1 = new javax.swing.JLabel();
         lbl_temporadasSerie1 = new javax.swing.JLabel();
         lbl_episodiosSerie1 = new javax.swing.JLabel();
         lbl_nomeSerie2 = new javax.swing.JLabel();
-        lbl_descSerie2 = new javax.swing.JLabel();
         lbl_temporadasSerie2 = new javax.swing.JLabel();
         lbl_episodiosSerie2 = new javax.swing.JLabel();
         lbl_textNome1 = new javax.swing.JLabel();
-        lbl_textDesc1 = new javax.swing.JLabel();
         lbl_textTemporada1 = new javax.swing.JLabel();
         lbl_textEp1 = new javax.swing.JLabel();
         lbl_textNome2 = new javax.swing.JLabel();
-        lbl_textDesc2 = new javax.swing.JLabel();
         lbl_textTemporada2 = new javax.swing.JLabel();
         lbl_textEp2 = new javax.swing.JLabel();
         lbl_serie1 = new javax.swing.JLabel();
         lbl_textNome3 = new javax.swing.JLabel();
         lbl_nomeFilme1 = new javax.swing.JLabel();
-        lbl_descFilme1 = new javax.swing.JLabel();
-        lbl_textDesc3 = new javax.swing.JLabel();
         lbl_textDuracao1 = new javax.swing.JLabel();
         lbl_duracaoFilme1 = new javax.swing.JLabel();
         lbl_textNome4 = new javax.swing.JLabel();
         lbl_nomeFilme2 = new javax.swing.JLabel();
-        lbl_descFilme2 = new javax.swing.JLabel();
-        lbl_textDesc4 = new javax.swing.JLabel();
         lbl_duracaoFilme2 = new javax.swing.JLabel();
         lbl_textDuracao2 = new javax.swing.JLabel();
         painelSerieResultados = new javax.swing.JPanel();
@@ -432,7 +408,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addComponent(bt_alterarTelaLogin)))
                 .addGap(119, 119, 119)
                 .addComponent(bt_pesquisar)
-                .addContainerGap(271, Short.MAX_VALUE))
+                .addContainerGap(462, Short.MAX_VALUE))
         );
 
         painelCardPrincipal.add(painelMenuPrincipal, "menuPrincipal");
@@ -497,7 +473,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGroup(painelAlterarLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_novaSenha)
                     .addComponent(txt_novaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 317, Short.MAX_VALUE)
                 .addComponent(bt_alterar)
                 .addGap(62, 62, 62)
                 .addComponent(bt_voltarMenu)
@@ -517,7 +493,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        bt_voltarMenu2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        bt_voltarMenu2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         bt_voltarMenu2.setText("Voltar");
         bt_voltarMenu2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -540,10 +516,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        lbl_descSerie1.setBackground(new java.awt.Color(255, 255, 255));
-        lbl_descSerie1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_descSerie1.setOpaque(true);
-
         lbl_temporadasSerie1.setBackground(new java.awt.Color(255, 255, 255));
         lbl_temporadasSerie1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_temporadasSerie1.setOpaque(true);
@@ -563,10 +535,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        lbl_descSerie2.setBackground(new java.awt.Color(255, 255, 255));
-        lbl_descSerie2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_descSerie2.setOpaque(true);
-
         lbl_temporadasSerie2.setBackground(new java.awt.Color(255, 255, 255));
         lbl_temporadasSerie2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_temporadasSerie2.setOpaque(true);
@@ -577,9 +545,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lbl_textNome1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lbl_textNome1.setText("Nome:");
 
-        lbl_textDesc1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lbl_textDesc1.setText("Descrição:");
-
         lbl_textTemporada1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lbl_textTemporada1.setText("Temporadas:");
 
@@ -588,9 +553,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         lbl_textNome2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lbl_textNome2.setText("Nome:");
-
-        lbl_textDesc2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lbl_textDesc2.setText("Descrição:");
 
         lbl_textTemporada2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lbl_textTemporada2.setText("Temporadas:");
@@ -616,13 +578,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        lbl_descFilme1.setBackground(new java.awt.Color(255, 255, 255));
-        lbl_descFilme1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_descFilme1.setOpaque(true);
-
-        lbl_textDesc3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lbl_textDesc3.setText("Descrição:");
-
         lbl_textDuracao1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lbl_textDuracao1.setText("Duração:");
 
@@ -645,13 +600,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        lbl_descFilme2.setBackground(new java.awt.Color(255, 255, 255));
-        lbl_descFilme2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_descFilme2.setOpaque(true);
-
-        lbl_textDesc4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lbl_textDesc4.setText("Descrição:");
-
         lbl_duracaoFilme2.setBackground(new java.awt.Color(255, 255, 255));
         lbl_duracaoFilme2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_duracaoFilme2.setOpaque(true);
@@ -663,10 +611,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         painelPesquisar.setLayout(painelPesquisarLayout);
         painelPesquisarLayout.setHorizontalGroup(
             painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelPesquisarLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(bt_voltarMenu2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelPesquisarLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(txt_pesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -682,42 +626,46 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addGroup(painelPesquisarLayout.createSequentialGroup()
                         .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lbl_textNome1)
-                            .addComponent(lbl_textDesc1)
                             .addComponent(lbl_textTemporada1)
                             .addComponent(lbl_textEp1)
                             .addComponent(lbl_textNome2)
-                            .addComponent(lbl_textDesc2)
                             .addComponent(lbl_textTemporada2)
                             .addComponent(lbl_textEp2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_descSerie1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(lbl_episodiosSerie1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(lbl_temporadasSerie1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lbl_nomeSerie2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_descSerie2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(lbl_episodiosSerie2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(lbl_temporadasSerie2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lbl_nomeSerie1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
-                        .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lbl_textNome3)
-                            .addComponent(lbl_textDesc3)
-                            .addComponent(lbl_textDuracao1)
-                            .addComponent(lbl_textNome4)
-                            .addComponent(lbl_textDesc4)
-                            .addComponent(lbl_textDuracao2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(lbl_nomeSerie1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_nomeSerie2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 180, Short.MAX_VALUE)
                         .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_descFilme1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_duracaoFilme1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_nomeFilme2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_descFilme2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_duracaoFilme2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_nomeFilme1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(66, 66, 66))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelPesquisarLayout.createSequentialGroup()
+                                .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lbl_textNome3)
+                                    .addComponent(lbl_textNome4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbl_nomeFilme2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lbl_nomeFilme1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(145, 145, 145))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelPesquisarLayout.createSequentialGroup()
+                                .addComponent(lbl_textDuracao1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lbl_duracaoFilme1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(228, 228, 228))
+                            .addGroup(painelPesquisarLayout.createSequentialGroup()
+                                .addComponent(lbl_textDuracao2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lbl_duracaoFilme2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())))))
+            .addGroup(painelPesquisarLayout.createSequentialGroup()
+                .addGap(362, 362, 362)
+                .addComponent(bt_voltarMenu2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         painelPesquisarLayout.setVerticalGroup(
             painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -732,32 +680,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelPesquisarLayout.createSequentialGroup()
                         .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lbl_nomeSerie1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_textNome1))
+                        .addGap(18, 18, 18)
+                        .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(painelPesquisarLayout.createSequentialGroup()
-                                .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lbl_nomeSerie1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lbl_textNome1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lbl_descSerie1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lbl_textDesc1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lbl_temporadasSerie1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lbl_textTemporada1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lbl_episodiosSerie1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(lbl_textEp1))
-                        .addGap(18, 18, 18)
+                        .addGap(64, 64, 64)
                         .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(painelPesquisarLayout.createSequentialGroup()
-                                .addComponent(lbl_nomeSerie2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbl_descSerie2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(painelPesquisarLayout.createSequentialGroup()
-                                .addComponent(lbl_textNome2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbl_textDesc2)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(lbl_nomeSerie2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_textNome2))
+                        .addGap(18, 18, 18)
                         .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_textTemporada2)
                             .addComponent(lbl_temporadasSerie2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -766,37 +704,26 @@ public class TelaPrincipal extends javax.swing.JFrame {
                             .addComponent(lbl_episodiosSerie2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(painelPesquisarLayout.createSequentialGroup()
                                 .addComponent(lbl_textEp2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 2, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
-                        .addComponent(bt_voltarMenu2)
-                        .addGap(31, 31, 31))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 2, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(painelPesquisarLayout.createSequentialGroup()
                         .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lbl_nomeFilme1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbl_textNome3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_descFilme1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_textDesc3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_duracaoFilme1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbl_textDuracao1))
-                        .addGap(43, 43, 43)
+                        .addGap(89, 89, 89)
                         .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(painelPesquisarLayout.createSequentialGroup()
-                                .addComponent(lbl_nomeFilme2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbl_descFilme2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(painelPesquisarLayout.createSequentialGroup()
-                                .addComponent(lbl_textNome4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbl_textDesc4)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(lbl_nomeFilme2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_textNome4))
+                        .addGap(18, 18, 18)
                         .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_textDuracao2)
-                            .addComponent(lbl_duracaoFilme2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(lbl_duracaoFilme2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addComponent(bt_voltarMenu2)
+                .addGap(41, 41, 41))
         );
 
         painelCardPrincipal.add(painelPesquisar, "pesquisar");
@@ -851,33 +778,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(lbl_serieImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(painelSerieResultadosLayout.createSequentialGroup()
+                        .addGap(47, 47, 47)
                         .addGroup(painelSerieResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(painelSerieResultadosLayout.createSequentialGroup()
-                                .addGap(47, 47, 47)
-                                .addGroup(painelSerieResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)))
-                            .addGroup(painelSerieResultadosLayout.createSequentialGroup()
-                                .addGap(34, 34, 34)
-                                .addGroup(painelSerieResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel12)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelSerieResultadosLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel13)))))
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(24, 24, 24)
                         .addGroup(painelSerieResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(painelSerieResultadosLayout.createSequentialGroup()
-                                .addGap(7, 7, 7)
-                                .addComponent(lbl_serieNomeR, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(painelSerieResultadosLayout.createSequentialGroup()
-                                .addGap(7, 7, 7)
-                                .addComponent(lbl_serieDescR, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(painelSerieResultadosLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(painelSerieResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lbl_serieEpisodiosR, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lbl_serieTemporadaR, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(lbl_serieNomeR, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_serieDescR, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(painelSerieResultadosLayout.createSequentialGroup()
-                        .addGap(42, 42, 42)
+                        .addGap(33, 33, 33)
+                        .addGroup(painelSerieResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(painelSerieResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_serieEpisodiosR, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_serieTemporadaR, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(painelSerieResultadosLayout.createSequentialGroup()
+                        .addGap(54, 54, 54)
                         .addComponent(bt_voltarPesquisar1)))
                 .addContainerGap(399, Short.MAX_VALUE))
         );
@@ -892,24 +811,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelSerieResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_serieDescR, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
+                .addGap(18, 18, 18)
+                .addGroup(painelSerieResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelSerieResultadosLayout.createSequentialGroup()
-                        .addComponent(lbl_serieDescR, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel13))
                     .addGroup(painelSerieResultadosLayout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
-                        .addGroup(painelSerieResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(painelSerieResultadosLayout.createSequentialGroup()
-                                .addComponent(jLabel12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel13))
-                            .addGroup(painelSerieResultadosLayout.createSequentialGroup()
-                                .addComponent(lbl_serieTemporadaR, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbl_serieEpisodiosR, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(30, 30, 30)
-                        .addComponent(bt_voltarPesquisar1)))
-                .addContainerGap())
+                        .addComponent(lbl_serieTemporadaR, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbl_serieEpisodiosR, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(81, 81, 81)
+                .addComponent(bt_voltarPesquisar1)
+                .addContainerGap(142, Short.MAX_VALUE))
         );
 
         painelCardPrincipal.add(painelSerieResultados, "serieResultados");
@@ -961,18 +877,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
                             .addComponent(lbl_filmeNomeR, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbl_filmeDescR, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(painelFilmeResultadosLayout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbl_filmeDuracaoR, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(108, 108, 108)
+                        .addComponent(lbl_filmeImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(painelFilmeResultadosLayout.createSequentialGroup()
-                        .addGap(62, 62, 62)
+                        .addGap(52, 52, 52)
                         .addGroup(painelFilmeResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lbl_filmeImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(painelFilmeResultadosLayout.createSequentialGroup()
-                                .addComponent(bt_voltarPesquisar2)
-                                .addGap(223, 223, 223)))))
-                .addContainerGap(374, Short.MAX_VALUE))
+                            .addComponent(bt_voltarPesquisar2)
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbl_filmeDuracaoR, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(361, Short.MAX_VALUE))
         );
         painelFilmeResultadosLayout.setVerticalGroup(
             painelFilmeResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -991,9 +905,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGroup(painelFilmeResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbl_filmeDuracaoR, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addGap(193, 193, 193)
+                .addGap(100, 100, 100)
                 .addComponent(bt_voltarPesquisar2)
-                .addGap(43, 43, 43))
+                .addContainerGap())
         );
 
         painelCardPrincipal.add(painelFilmeResultados, "filmeResultados");
@@ -1141,10 +1055,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel lbl_descFilme1;
-    private javax.swing.JLabel lbl_descFilme2;
-    private javax.swing.JLabel lbl_descSerie1;
-    private javax.swing.JLabel lbl_descSerie2;
     private javax.swing.JLabel lbl_duracaoFilme1;
     private javax.swing.JLabel lbl_duracaoFilme2;
     private javax.swing.JLabel lbl_episodiosSerie1;
@@ -1168,10 +1078,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_serieTemporadaR;
     private javax.swing.JLabel lbl_temporadasSerie1;
     private javax.swing.JLabel lbl_temporadasSerie2;
-    private javax.swing.JLabel lbl_textDesc1;
-    private javax.swing.JLabel lbl_textDesc2;
-    private javax.swing.JLabel lbl_textDesc3;
-    private javax.swing.JLabel lbl_textDesc4;
     private javax.swing.JLabel lbl_textDuracao1;
     private javax.swing.JLabel lbl_textDuracao2;
     private javax.swing.JLabel lbl_textEp1;
