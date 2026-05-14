@@ -45,25 +45,27 @@ public class ControleSeriesCurtidas {
             painel.setLayout(new javax.swing.BoxLayout(painel, javax.swing.BoxLayout.Y_AXIS));
 
             // =========================
-            // HEADER
+            // HEADER (SEM ESPAÇO EXAGERADO)
             // =========================
-            JPanel header = new JPanel();
-            header.setLayout(new java.awt.BorderLayout());
+            JPanel header = new JPanel(new java.awt.BorderLayout());
+            header.setMaximumSize(new java.awt.Dimension(Integer.MAX_VALUE, 60));
+            header.setPreferredSize(new java.awt.Dimension(0, 60));
+            header.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 10, 5, 10));
 
             JLabel titulo = new JLabel("Séries Curtidas");
             titulo.setFont(new java.awt.Font("Arial", java.awt.Font.BOLD, 28));
             titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
             JButton btVoltarMenu = new JButton("Voltar");
-            btVoltarMenu.addActionListener(e -> {
-                tp.getTrocarTela().trocarMenu();
-            });
+            btVoltarMenu.addActionListener(e -> tp.getTrocarTela().trocarMenu());
 
             header.add(btVoltarMenu, java.awt.BorderLayout.EAST);
             header.add(titulo, java.awt.BorderLayout.CENTER);
 
             painel.add(header);
-            painel.add(javax.swing.Box.createVerticalStrut(20));
+
+            // pequeno espaço controlado (opcional)
+            painel.add(javax.swing.Box.createVerticalStrut(10));
 
             // =========================
             // LISTA
@@ -76,9 +78,9 @@ public class ControleSeriesCurtidas {
                 JPanel card = new JPanel();
                 card.setLayout(new javax.swing.BoxLayout(card, javax.swing.BoxLayout.Y_AXIS));
 
-                // 🔥 FIX PRINCIPAL: impede esticar estranho
-                card.setMaximumSize(new java.awt.Dimension(220, 320));
-                card.setPreferredSize(new java.awt.Dimension(220, 320));
+                // FIX: tamanho fixo sem esticar
+                card.setMaximumSize(new java.awt.Dimension(250, 260));
+                card.setPreferredSize(new java.awt.Dimension(250, 260));
                 card.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
 
                 // ================= IMAGEM =================
@@ -125,27 +127,19 @@ public class ControleSeriesCurtidas {
                     }
                 });
 
-                // ================= ESPAÇAMENTO =================
+                // ================= MONTAGEM =================
                 card.add(lblImagem);
-                card.add(javax.swing.Box.createVerticalStrut(1));
+                card.add(javax.swing.Box.createVerticalStrut(5));
                 card.add(lblNome);
-                card.add(javax.swing.Box.createVerticalStrut(1));
+                card.add(javax.swing.Box.createVerticalStrut(5));
                 card.add(btDescurtir);
 
                 painel.add(card);
-                painel.add(javax.swing.Box.createVerticalStrut(5));
             }
 
-            // 🔥 FIX DO SCROLL (IMPORTANTE)
+            // refresh final
             painel.revalidate();
             painel.repaint();
-
-            painel.setPreferredSize(
-                new java.awt.Dimension(
-                    painel.getWidth(),
-                    painel.getComponentCount() * 350
-                )
-            );
 
         } catch (Exception e) {
             e.printStackTrace();
