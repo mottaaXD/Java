@@ -63,13 +63,20 @@ public class ControleTrocarTela {
     }
     
     public void trocarMenu(){
+        tp.getLbl_serieImagem().setIcon(null);
         cl2.show(tp.getPainelCardPrincipal(), "menuPrincipal");
     }
     
     public void trocarPesquisar(){
         cPesc.mostrarSerie1(false);
         cPesc.mostrarSerie2(false);
+        tp.getTxt_pesquisa().setText("");
         cl2.show(tp.getPainelCardPrincipal(), "pesquisar");
         
+    }
+    
+    
+    public void trocarSerieResultado(){
+        cl2.show(tp.getPainelCardPrincipal(), "serieResultados");
     }
 }

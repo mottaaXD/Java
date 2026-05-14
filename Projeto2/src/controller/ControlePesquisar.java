@@ -11,8 +11,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import view.TelaPrincipal;
+import controller.ControleSerieResultado;
 
 
+import model.Serie;
 
 
 /**
@@ -21,12 +23,14 @@ import view.TelaPrincipal;
  */
 public class ControlePesquisar {
     private TelaPrincipal tp;
-    public boolean serie1 = false;
-    public boolean serie2 = false;
-    
+
+    private Serie serie1;
+    private Serie serie2;
+    private ControleSerieResultado csr;
     
     public ControlePesquisar(TelaPrincipal tp) {
         this.tp = tp;
+        this.csr = new ControleSerieResultado(tp);
     }
     
     public void mostrarSerie1(boolean serie){
@@ -73,8 +77,12 @@ public class ControlePesquisar {
                         else tp.getLbl_descSerie1().setText(res.getString("descricao"));  
                         
                         tp.getLbl_temporadasSerie1().setText(res.getString("temporadas"));
-                        tp.getLbl_temporadasSerie1().setText(res.getString("episodios"));
-                        
+                        tp.getLbl_episodiosSerie1().setText(res.getString("episodios"));
+                        serie1 = new Serie(res.getString("nome"),
+                                res.getString("descricao"),
+                                res.getString("temporadas"),
+                                res.getString("episodios"),
+                                res.getString("imagem"));
 
                         break;
                     case 2:
@@ -85,8 +93,14 @@ public class ControlePesquisar {
                         else tp.getLbl_descSerie2().setText(res.getString("descricao"));  
                         
                         tp.getLbl_temporadasSerie2().setText(res.getString("temporadas"));
-                        tp.getLbl_temporadasSerie2().setText(res.getString("episodios"));
-
+                        tp.getLbl_episodiosSerie2().setText(res.getString("episodios"));
+                        
+                        serie2 = new Serie(res.getString("nome"),
+                                res.getString("descricao"),
+                                res.getString("temporadas"),
+                                res.getString("episodios"),
+                                res.getString("imagem"));
+                               
                         break;  
                 }
                 contador++;
@@ -101,5 +115,13 @@ public class ControlePesquisar {
             JOptionPane.showMessageDialog(tp, "Erro de conexão", "Erro", 
                                                 JOptionPane.ERROR_MESSAGE);
         }
+    }
+    
+    public void clicarSerie1(){
+        if(serie1 != null) csr.abrirResultado(serie1);
+    }
+    
+    public void clicarSerie2(){
+        if(serie2 != null) csr.abrirResultado(serie2);
     }
 }
