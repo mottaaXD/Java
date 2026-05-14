@@ -24,7 +24,9 @@ public class Serie {
     }
 
     public String getDesc() {
-        return desc;
+        if(desc != null) return desc;
+        else return "Sem descrição";
+        
     }
 
     public String getTemporadas() {
@@ -58,6 +60,5 @@ public class Serie {
     public void setImagem(String imagem) {
         this.imagem = imagem;
     }
-    
     
 }

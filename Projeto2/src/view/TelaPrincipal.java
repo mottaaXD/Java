@@ -822,7 +822,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel11.setText("Descrição:");
 
         lbl_serieDescR.setBackground(new java.awt.Color(255, 255, 255));
-        lbl_serieDescR.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lbl_serieDescR.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lbl_serieDescR.setText("Sem Descrição");
+        lbl_serieDescR.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         lbl_serieDescR.setOpaque(true);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
