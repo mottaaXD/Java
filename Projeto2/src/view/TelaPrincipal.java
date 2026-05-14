@@ -9,6 +9,7 @@ import controller.ControleTrocarTela;
 import controller.ControlePrincipal;
 import controller.ControlePesquisar;
 import controller.ControleFilmeResultado;
+import controller.ControleSerieResultado;
 
 import java.awt.event.KeyEvent;
 import javax.swing.JButton;
@@ -37,6 +38,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cPes = new ControlePesquisar(this);
         this.usuarioLogado = usuario;
         cfr = new ControleFilmeResultado(this);
+        csr = new ControleSerieResultado(this);
     }
     
     private ControlePrincipal cp;
@@ -44,6 +46,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private ControleTrocarTela trocarTela;
     private ControlePesquisar cPes;
     private ControleFilmeResultado cfr;
+    private ControleSerieResultado csr;
 
     private Usuario usuarioLogado;
     public ControlePrincipal getCp() {
@@ -241,6 +244,27 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public Usuario getUsuarioLogado(){
         return usuarioLogado;
     }
+
+    public JButton getBt_curtirSerie() {
+        return bt_curtirSerie;
+    }
+
+    public JPanel getPainelFilmesCurtidos() {
+        return painelFilmesCurtidos;
+    }
+
+    public JPanel getPainelSeriesCurtidas() {
+        return painelSeriesCurtidas;
+    }
+
+    public JPanel getListaFilmesCurtidos() {
+        return listaFilmesCurtidos;
+    }
+
+    public JPanel getListaSeriesCurtidas() {
+        return listaSeriesCurtidas;
+    }
+    
     
     
 
@@ -309,6 +333,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lbl_usuarioLogado = new javax.swing.JLabel();
         bt_alterarTelaLogin = new javax.swing.JButton();
         bt_pesquisar = new javax.swing.JButton();
+        bt_verFilmes = new javax.swing.JButton();
+        bt_verSeries = new javax.swing.JButton();
         painelAlterarLogin = new javax.swing.JPanel();
         txt_novoNome = new javax.swing.JTextField();
         lbl_novoNome = new javax.swing.JLabel();
@@ -352,6 +378,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lbl_serieTemporadaR = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         lbl_serieEpisodiosR = new javax.swing.JLabel();
+        bt_curtirSerie = new javax.swing.JButton();
         painelFilmeResultados = new javax.swing.JPanel();
         lbl_filmeImagem = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -362,12 +389,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         lbl_filmeDuracaoR = new javax.swing.JLabel();
         bt_curtirFilme = new javax.swing.JButton();
+        painelFilmesCurtidos = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listaFilmesCurtidos = new javax.swing.JPanel();
+        painelSeriesCurtidas = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        listaSeriesCurtidas = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        painelCardPrincipal.setPreferredSize(new java.awt.Dimension(880, 640));
         painelCardPrincipal.setLayout(new java.awt.CardLayout());
 
         painelMenuPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        painelMenuPrincipal.setPreferredSize(new java.awt.Dimension(880, 740));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 38)); // NOI18N
         jLabel1.setText("Bem Vindo");
@@ -390,22 +426,47 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        bt_verFilmes.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        bt_verFilmes.setText("Ver Filmes Curtidos");
+        bt_verFilmes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_verFilmesActionPerformed(evt);
+            }
+        });
+
+        bt_verSeries.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        bt_verSeries.setText("Ver Séries Curtidas");
+        bt_verSeries.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_verSeriesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout painelMenuPrincipalLayout = new javax.swing.GroupLayout(painelMenuPrincipal);
         painelMenuPrincipal.setLayout(painelMenuPrincipalLayout);
         painelMenuPrincipalLayout.setHorizontalGroup(
             painelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelMenuPrincipalLayout.createSequentialGroup()
-                .addGap(253, 253, 253)
-                .addComponent(jLabel1)
-                .addGap(34, 34, 34)
-                .addComponent(lbl_usuarioLogado, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
-                .addComponent(bt_alterarTelaLogin)
+                .addGroup(painelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelMenuPrincipalLayout.createSequentialGroup()
+                        .addGap(253, 253, 253)
+                        .addComponent(jLabel1)
+                        .addGap(34, 34, 34)
+                        .addComponent(lbl_usuarioLogado, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 580, Short.MAX_VALUE)
+                        .addComponent(bt_alterarTelaLogin))
+                    .addGroup(painelMenuPrincipalLayout.createSequentialGroup()
+                        .addGroup(painelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(painelMenuPrincipalLayout.createSequentialGroup()
+                                .addGap(361, 361, 361)
+                                .addComponent(bt_pesquisar))
+                            .addGroup(painelMenuPrincipalLayout.createSequentialGroup()
+                                .addGap(134, 134, 134)
+                                .addComponent(bt_verFilmes)
+                                .addGap(110, 110, 110)
+                                .addComponent(bt_verSeries)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelMenuPrincipalLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bt_pesquisar)
-                .addGap(356, 356, 356))
         );
         painelMenuPrincipalLayout.setVerticalGroup(
             painelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -421,10 +482,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addComponent(bt_alterarTelaLogin)))
                 .addGap(119, 119, 119)
                 .addComponent(bt_pesquisar)
-                .addContainerGap(462, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(painelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bt_verFilmes)
+                    .addComponent(bt_verSeries))
+                .addContainerGap(444, Short.MAX_VALUE))
         );
 
         painelCardPrincipal.add(painelMenuPrincipal, "menuPrincipal");
+
+        painelAlterarLogin.setPreferredSize(new java.awt.Dimension(880, 740));
 
         txt_novoNome.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
@@ -473,7 +540,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addGroup(painelAlterarLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txt_novoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txt_novaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(261, Short.MAX_VALUE))
+                .addContainerGap(703, Short.MAX_VALUE))
         );
         painelAlterarLoginLayout.setVerticalGroup(
             painelAlterarLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -486,7 +553,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGroup(painelAlterarLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_novaSenha)
                     .addComponent(txt_novaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 317, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 354, Short.MAX_VALUE)
                 .addComponent(bt_alterar)
                 .addGap(62, 62, 62)
                 .addComponent(bt_voltarMenu)
@@ -494,6 +561,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         painelCardPrincipal.add(painelAlterarLogin, "telaAlterar");
+
+        painelPesquisar.setPreferredSize(new java.awt.Dimension(880, 558));
 
         txt_pesquisa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -654,7 +723,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                                 .addComponent(lbl_temporadasSerie2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(lbl_nomeSerie1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbl_nomeSerie2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 180, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
                         .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelPesquisarLayout.createSequentialGroup()
                                 .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -676,7 +745,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                                 .addComponent(lbl_duracaoFilme2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())))))
             .addGroup(painelPesquisarLayout.createSequentialGroup()
-                .addGap(362, 362, 362)
+                .addGap(366, 366, 366)
                 .addComponent(bt_voltarMenu2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -734,12 +803,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_textDuracao2)
                             .addComponent(lbl_duracaoFilme2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 266, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 4, Short.MAX_VALUE)
                 .addComponent(bt_voltarMenu2)
-                .addGap(41, 41, 41))
+                .addGap(158, 158, 158))
         );
 
         painelCardPrincipal.add(painelPesquisar, "pesquisar");
+
+        painelSerieResultados.setPreferredSize(new java.awt.Dimension(880, 740));
 
         lbl_serieImagem.setPreferredSize(new java.awt.Dimension(256, 203));
 
@@ -781,21 +852,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lbl_serieEpisodiosR.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lbl_serieEpisodiosR.setOpaque(true);
 
+        bt_curtirSerie.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        bt_curtirSerie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_curtirSerieActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout painelSerieResultadosLayout = new javax.swing.GroupLayout(painelSerieResultados);
         painelSerieResultados.setLayout(painelSerieResultadosLayout);
         painelSerieResultadosLayout.setHorizontalGroup(
             painelSerieResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelSerieResultadosLayout.createSequentialGroup()
                 .addGroup(painelSerieResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painelSerieResultadosLayout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addGroup(painelSerieResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(24, 24, 24)
-                        .addGroup(painelSerieResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_serieDescR, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_serieNomeR, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(painelSerieResultadosLayout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addGroup(painelSerieResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -810,14 +879,30 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addComponent(bt_voltarPesquisar1))
                     .addGroup(painelSerieResultadosLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(lbl_serieImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(399, Short.MAX_VALUE))
+                        .addComponent(lbl_serieImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(99, 99, 99)
+                        .addComponent(bt_curtirSerie, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(painelSerieResultadosLayout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addGroup(painelSerieResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(24, 24, 24)
+                        .addGroup(painelSerieResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_serieDescR, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_serieNomeR, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(804, Short.MAX_VALUE))
         );
         painelSerieResultadosLayout.setVerticalGroup(
             painelSerieResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelSerieResultadosLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lbl_serieImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(painelSerieResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelSerieResultadosLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(lbl_serieImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(painelSerieResultadosLayout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(bt_curtirSerie, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelSerieResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lbl_serieNomeR, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -838,10 +923,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addComponent(lbl_serieEpisodiosR, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(81, 81, 81)
                 .addComponent(bt_voltarPesquisar1)
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addContainerGap(179, Short.MAX_VALUE))
         );
 
         painelCardPrincipal.add(painelSerieResultados, "serieResultados");
+
+        painelFilmeResultados.setPreferredSize(new java.awt.Dimension(880, 578));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setText("Nome:");
@@ -907,7 +994,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lbl_filmeDuracaoR, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(347, Short.MAX_VALUE))
+                .addContainerGap(789, Short.MAX_VALUE))
         );
         painelFilmeResultadosLayout.setVerticalGroup(
             painelFilmeResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -938,6 +1025,77 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         painelCardPrincipal.add(painelFilmeResultados, "filmeResultados");
 
+        painelFilmesCurtidos.setPreferredSize(new java.awt.Dimension(880, 740));
+
+        javax.swing.GroupLayout listaFilmesCurtidosLayout = new javax.swing.GroupLayout(listaFilmesCurtidos);
+        listaFilmesCurtidos.setLayout(listaFilmesCurtidosLayout);
+        listaFilmesCurtidosLayout.setHorizontalGroup(
+            listaFilmesCurtidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 592, Short.MAX_VALUE)
+        );
+        listaFilmesCurtidosLayout.setVerticalGroup(
+            listaFilmesCurtidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 328, Short.MAX_VALUE)
+        );
+
+        jScrollPane1.setViewportView(listaFilmesCurtidos);
+
+        javax.swing.GroupLayout painelFilmesCurtidosLayout = new javax.swing.GroupLayout(painelFilmesCurtidos);
+        painelFilmesCurtidos.setLayout(painelFilmesCurtidosLayout);
+        painelFilmesCurtidosLayout.setHorizontalGroup(
+            painelFilmesCurtidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelFilmesCurtidosLayout.createSequentialGroup()
+                .addGap(178, 178, 178)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(536, Short.MAX_VALUE))
+        );
+        painelFilmesCurtidosLayout.setVerticalGroup(
+            painelFilmesCurtidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelFilmesCurtidosLayout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(302, Short.MAX_VALUE))
+        );
+
+        painelCardPrincipal.add(painelFilmesCurtidos, "filmesCurtidos");
+
+        painelSeriesCurtidas.setPreferredSize(new java.awt.Dimension(880, 740));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+        jLabel7.setText("Séries Curtidas");
+
+        javax.swing.GroupLayout listaSeriesCurtidasLayout = new javax.swing.GroupLayout(listaSeriesCurtidas);
+        listaSeriesCurtidas.setLayout(listaSeriesCurtidasLayout);
+        listaSeriesCurtidasLayout.setHorizontalGroup(
+            listaSeriesCurtidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(listaSeriesCurtidasLayout.createSequentialGroup()
+                .addGap(180, 180, 180)
+                .addComponent(jLabel7)
+                .addContainerGap(559, Short.MAX_VALUE))
+        );
+        listaSeriesCurtidasLayout.setVerticalGroup(
+            listaSeriesCurtidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(listaSeriesCurtidasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addContainerGap(690, Short.MAX_VALUE))
+        );
+
+        jScrollPane2.setViewportView(listaSeriesCurtidas);
+
+        javax.swing.GroupLayout painelSeriesCurtidasLayout = new javax.swing.GroupLayout(painelSeriesCurtidas);
+        painelSeriesCurtidas.setLayout(painelSeriesCurtidasLayout);
+        painelSeriesCurtidasLayout.setHorizontalGroup(
+            painelSeriesCurtidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 939, Short.MAX_VALUE)
+        );
+        painelSeriesCurtidasLayout.setVerticalGroup(
+            painelSeriesCurtidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
+        );
+
+        painelCardPrincipal.add(painelSeriesCurtidas, "seriesCurtidas");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -954,6 +1112,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(painelCardPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
+
+        painelCardPrincipal.getAccessibleContext().setAccessibleDescription("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1034,6 +1194,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cfr.curtirFilme(getLbl_filmeNomeR().getText());
     }//GEN-LAST:event_bt_curtirFilmeActionPerformed
 
+    private void bt_curtirSerieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_curtirSerieActionPerformed
+        csr.curtirSerie(getLbl_serieNomeR().getText());
+    }//GEN-LAST:event_bt_curtirSerieActionPerformed
+
+    private void bt_verFilmesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_verFilmesActionPerformed
+        trocarTela.trocarFilmesCurtidos();
+    }//GEN-LAST:event_bt_verFilmesActionPerformed
+
+    private void bt_verSeriesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_verSeriesActionPerformed
+       trocarTela.trocarSeriesCurtidas();
+    }//GEN-LAST:event_bt_verSeriesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1073,7 +1245,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton bt_alterar;
     private javax.swing.JButton bt_alterarTelaLogin;
     private javax.swing.JButton bt_curtirFilme;
+    private javax.swing.JButton bt_curtirSerie;
     private javax.swing.JButton bt_pesquisar;
+    private javax.swing.JButton bt_verFilmes;
+    private javax.swing.JButton bt_verSeries;
     private javax.swing.JButton bt_voltarMenu;
     private javax.swing.JButton bt_voltarMenu2;
     private javax.swing.JButton bt_voltarPesquisar1;
@@ -1086,6 +1261,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lbl_duracaoFilme1;
     private javax.swing.JLabel lbl_duracaoFilme2;
     private javax.swing.JLabel lbl_episodiosSerie1;
@@ -1120,12 +1298,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_textTemporada1;
     private javax.swing.JLabel lbl_textTemporada2;
     private javax.swing.JLabel lbl_usuarioLogado;
+    private javax.swing.JPanel listaFilmesCurtidos;
+    private javax.swing.JPanel listaSeriesCurtidas;
     private javax.swing.JPanel painelAlterarLogin;
     private javax.swing.JPanel painelCardPrincipal;
     private javax.swing.JPanel painelFilmeResultados;
+    private javax.swing.JPanel painelFilmesCurtidos;
     private javax.swing.JPanel painelMenuPrincipal;
     private javax.swing.JPanel painelPesquisar;
     private javax.swing.JPanel painelSerieResultados;
+    private javax.swing.JPanel painelSeriesCurtidas;
     private javax.swing.JTextField txt_novaSenha;
     private javax.swing.JTextField txt_novoNome;
     private javax.swing.JTextField txt_pesquisa;

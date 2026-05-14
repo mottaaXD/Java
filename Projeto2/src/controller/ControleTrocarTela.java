@@ -19,6 +19,8 @@ import java.sql.SQLException;
 
 import controller.ControlePesquisar;
 import controller.ControleFilmeResultado;
+import controller.ControleFilmesCurtidos;
+import controller.ControleSeriesCurtidas;
 
 
 public class ControleTrocarTela {
@@ -28,6 +30,8 @@ public class ControleTrocarTela {
     private CardLayout cl2;
     private TelaPrincipal tp;
     private ControleFilmeResultado cfr;
+    private ControleFilmesCurtidos cfc;
+    private ControleSeriesCurtidas csc;
     
     private ControlePesquisar cPesc;
     
@@ -42,6 +46,8 @@ public class ControleTrocarTela {
         this.cl2 = (CardLayout) tp.getPainelCardPrincipal().getLayout();
         this.cPesc = new ControlePesquisar(tp);
         this.cfr = new ControleFilmeResultado(tp);
+        this.cfc = new ControleFilmesCurtidos(tp);
+        this.csc = new ControleSeriesCurtidas(tp);
     }
     
     
@@ -87,5 +93,15 @@ public class ControleTrocarTela {
     
     public void trocarFilmeResultado(){
         cl2.show(tp.getPainelCardPrincipal(), "filmeResultados");
+    }
+    
+    public void trocarFilmesCurtidos(){
+        cfc.carregarFilmesCurtidos();
+        cl2.show(tp.getPainelCardPrincipal(), "filmesCurtidos");
+    }
+    
+    public void trocarSeriesCurtidas(){
+        csc.carregarSeriesCurtidos();
+        cl2.show(tp.getPainelCardPrincipal(), "seriesCurtidas");
     }
 }

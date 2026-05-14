@@ -3,11 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controller;
-import controller.ControlePesquisar;
-import model.Serie;
+
 import view.TelaPrincipal;
+import dao.FilmeDAO;
+import dao.Conexao;
+import java.sql.ResultSet;
+import controller.ControlePrincipal;
 
+import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.sql.SQLException;
 
+import dao.CurtidasDAO;
+
+import model.Serie;
 /**
  *
  * @author Usuario
@@ -26,6 +35,7 @@ public class ControleSerieResultado {
         tp.getLbl_serieEpisodiosR().setText(serie.getEpisodios());
         carregarImagem(serie.getImagem());
         tp.getTrocarTela().trocarSerieResultado();
+        atualizarBotao(serie.getNome());
     }
     
     private void carregarImagem(String caminho){
@@ -41,6 +51,53 @@ public class ControleSerieResultado {
         }catch(Exception e){
             System.out.println("Erro ao carregar imagem: " + caminho);
             tp.getLbl_serieImagem().setIcon(null);
+        }
+    }
+    
+    public void curtirSerie(String nomeSerie){
+        try{
+            Conexao conexao = new Conexao();
+            Connection conn = conexao.getConnection();
+            CurtidasDAO dao = new CurtidasDAO(conn);
+
+            String usuario = tp.getUsuarioLogado().getUsuarioNome();
+
+            ResultSet rs = dao.verificarCurtidaSerie(usuario, nomeSerie);
+
+            if(rs.next()){
+                dao = new CurtidasDAO(new Conexao().getConnection());
+                dao.descurtirSerie(usuario, nomeSerie);
+            }else{
+                dao = new CurtidasDAO(new Conexao().getConnection());
+                dao.curtirSerie(usuario, nomeSerie);
+            }
+
+
+            atualizarBotao(nomeSerie);
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+}
+    
+   public void atualizarBotao(String nomeSerie){
+        try{
+            Conexao conexao = new Conexao();
+            Connection conn = conexao.getConnection();
+            CurtidasDAO dao = new CurtidasDAO(conn);
+
+            String usuario = tp.getUsuarioLogado().getUsuarioNome();
+
+            ResultSet rs = dao.verificarCurtidaSerie(usuario, nomeSerie);
+
+            if(rs.next()){
+                tp.getBt_curtirSerie().setText("Descurtir");
+            }else{
+                tp.getBt_curtirSerie().setText("Curtir");
+            }
+
+        }catch(Exception e){
+            e.printStackTrace();
         }
     }
 }
