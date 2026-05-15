@@ -13,8 +13,7 @@ Este documento é um relatório sobre o projeto programado em Java sobre catálo
     - [View (Interface Gráfica)](#-view-interface-gráfica)
 4. [Funcionalidades e Regras de Negócio](#-funcionalidades-e-regras-de-negócio)
 5. [Modelagem do Banco de Dados](#-modelagem-do-banco-de-dados)
-6. [Diagrama Lógico e Fluxo de Execução](#-diagrama-lógico-e-fluxo-de-execução)
-7. [Instruções para Execução (Setup)](#-instruções-para-execução-setup)
+6. [Instruções para Execução (Setup)](#-instruções-para-execução-setup)
 
 
 
@@ -98,5 +97,19 @@ Classes que concentram os componentes visuais (Botões, TextFields, Panels).
    * **Criação**: O usuário define um nome e gera um ID de Playlist vazio (`ControlePlaylist`).
    * **Inclusão**: Ao navegar pelos detalhes do filme/série, o usuário ativa o `ControleSeletorPlaylist`, escolhe uma das playlists já existentes e injeta o nome do filme/série nela.
    * **Consumo**: Na área do usuário, `ControleListarPlaylist` exibe os nomes das playlists, e, ao clicar, `ControleConteudoPlaylist` faz o Join via DAO para trazer os itens da lista.
+
+---
+
+## 🗄️ Modelagem do Banco de Dados
+
+Baseado nas implementações do DAO, o banco de dados PostgreSQL possui uma modelagem relacional de 7 tabelas:
+
+* **Tabela `userdata`** (`usuario` PK, `nome`, ``, `senha`)
+* **Tabela `filmes`** (`nomefilme` PK, `descricao`, `duracao`, `imagem` )
+* **Tabela `series`** (`nomeserie` PK, `descricao`, `temporadas`, `episodios`, `imagem`)
+* **Tabela `filmes_curtidos`** (`usuario` PK, `nomefilme` PK)
+* **Tabela `series_curtidas`** (`usuario` PK, `nomeserie` PK)
+* **Tabela `playlists`** (`id` PK, `usuario`, `nomeplaylist`)
+* **Tabela `playlist_itens`** (`id_playlist` PK, `tipo`, `nome_item`)
 
 ---
