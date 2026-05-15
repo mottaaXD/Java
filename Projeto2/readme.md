@@ -20,10 +20,10 @@ Este documento é um relatório sobre o projeto programado em Java sobre catálo
 
 ## 📌 Visão Geral do Projeto
 
-O sistema foi concebido como uma aplicação Desktop utilizando **Java** com interface gráfica (provavelmente baseada em Swing/JavaFX, estruturada no NetBeans). A principal motivação do projeto é simular uma plataforma de streaming ou catálogo digital (semelhante à Netflix ou Letterboxd), oferecendo aos usuários a capacidade de:
+O sistema foi fei para ser executado em Desktop utilizando **Java** com interface gráfica baseada em Swing, feito no aplicativo Apache Netbeans 12.6 com integração ao banco de dados. A principal motivação do projeto é simular uma plataforma de streaming/catálogo digital, oferecendo aos usuários a capacidade de:
 
-- Realizar cadastro e autenticação segura.
-- Explorar e visualizar detalhes de diferentes obras audiovisuais separadas por categoria (Filmes e Séries).
-- Avaliar/interagir com o conteúdo através de um sistema de "Curtidas" (Favoritos).
-- Organizar e agrupar mídias através da criação de **Playlists** personalizadas.
+- Realizar cadastro e login.
+- Visualizar detalhes de diferentes filmes e séries.
+- Interagir com o conteúdo através de um sistema de "Curtidas".
+- Organizar e agrupar conteúdo através da criação de **Playlists** personalizadas.
 - Pesquisar títulos específicos na base de dados.
