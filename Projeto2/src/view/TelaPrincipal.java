@@ -495,11 +495,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(painelMenuPrincipalLayout.createSequentialGroup()
                 .addGroup(painelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelMenuPrincipalLayout.createSequentialGroup()
-                        .addGap(253, 253, 253)
+                        .addGap(235, 235, 235)
                         .addComponent(jLabel1)
-                        .addGap(34, 34, 34)
-                        .addComponent(lbl_usuarioLogado, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, Short.MAX_VALUE)
+                        .addGap(33, 33, 33)
+                        .addComponent(lbl_usuarioLogado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(37, 37, 37)
                         .addComponent(bt_alterarTelaLogin))
                     .addGroup(painelMenuPrincipalLayout.createSequentialGroup()
                         .addGap(118, 118, 118)
@@ -510,7 +510,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addGroup(painelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(bt_pesquisar)
                             .addComponent(bt_playlists, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 188, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         painelMenuPrincipalLayout.setVerticalGroup(
@@ -533,7 +533,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGroup(painelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bt_playlists)
                     .addComponent(bt_verSeries))
-                .addContainerGap(408, Short.MAX_VALUE))
+                .addContainerGap(308, Short.MAX_VALUE))
         );
 
         painelCardPrincipal.add(painelMenuPrincipal, "menuPrincipal");
@@ -1250,11 +1250,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         painelListaPlaylists.setLayout(painelListaPlaylistsLayout);
         painelListaPlaylistsLayout.setHorizontalGroup(
             painelListaPlaylistsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
+            .addComponent(jScrollPane4)
         );
         painelListaPlaylistsLayout.setVerticalGroup(
             painelListaPlaylistsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 640, Short.MAX_VALUE)
+            .addComponent(jScrollPane4)
         );
 
         painelCardPrincipal.add(painelListaPlaylists, "listaPlaylist");

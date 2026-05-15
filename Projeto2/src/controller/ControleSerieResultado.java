@@ -31,6 +31,7 @@ public class ControleSerieResultado {
     public void abrirResultado(Serie serie){
         tp.getLbl_serieNomeR().setText(serie.getNome());
         if(serie.getDesc()== null) tp.getLbl_serieDescR().setText("Sem descrição");
+        else tp.getLbl_serieDescR().setText(serie.getDesc());
         tp.getLbl_serieTemporadaR().setText(serie.getTemporadas());
         tp.getLbl_serieEpisodiosR().setText(serie.getEpisodios());
         carregarImagem(serie.getImagem());
