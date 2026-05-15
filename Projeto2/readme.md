@@ -27,3 +27,13 @@ O sistema foi fei para ser executado em Desktop utilizando **Java** com interfac
 - Interagir com o conteúdo através de um sistema de "Curtidas".
 - Organizar e agrupar conteúdo através da criação de **Playlists** personalizadas.
 - Pesquisar títulos específicos na base de dados.
+
+---
+
+## 🏗 Arquitetura do Sistema
+
+
+1. **MVC (Model-View-Controller)**: Separa as regras de negócio e dados (Model) da interface de usuário (View), utilizando os Controllers para realizar as interações do usuário com a tela.
+2. **DAO (Data Access Object)**: Todos os arquivos da comunicação com o banco de dados (consultas SQL via JDBC) separadas em um pacote, garantindo que os controladores e modelos não precisem conhecer a infraestrutura de dados.
+
+---
