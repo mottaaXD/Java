@@ -1,3 +1,8 @@
+# 🎬 Relatório Técnico do Projeto FEITV
+
+Este documento é um relatório sobre o projeto programado em Java sobre catálogo de seríes e filmes.
+
+
 ## 📑 Índice
 1. [Visão Geral do Projeto](#-visão-geral-do-projeto)
 2. [Arquitetura do Sistema](#-arquitetura-do-sistema)
