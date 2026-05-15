@@ -1,5 +1,5 @@
 ## 📑 Índice
-1. [Visão Geral do Projeto](#-visão-geral-e-escopo-do-projeto)
+1. [Visão Geral do Projeto](#-visão-geral-do-projeto)
 2. [Arquitetura do Sistema](#-arquitetura-do-sistema)
 3. [Estrutura de Pacotes e Componentes](#-estrutura-de-pacotes-e-componentes)
     - [Model (Modelos de Domínio)](#-model-modelos-de-domínio)
