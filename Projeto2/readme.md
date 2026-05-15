@@ -7,7 +7,7 @@ Este documento é um relatório sobre o projeto programado em Java sobre catálo
 1. [Visão Geral do Projeto](#-visão-geral-do-projeto)
 2. [Arquitetura do Sistema](#-arquitetura-do-sistema)
 3. [Estrutura de Pacotes e Componentes](#-estrutura-de-pacotes-e-componentes)
-    - [Model (Modelos de Domínio)](#-model-modelos-de-domínio)
+    - [Model (Entidades)](#-model-Entidades)
     - [DAO (Acesso ao Banco de Dados)](#-dao-acesso-ao-banco-de-dados)
     - [Controller (Controladores de Fluxo)](#-controller-controladores-de-fluxo)
     - [View (Interface Gráfica)](#-view-interface-gráfica)
