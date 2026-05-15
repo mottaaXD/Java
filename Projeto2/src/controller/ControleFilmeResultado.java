@@ -30,7 +30,7 @@ public class ControleFilmeResultado {
     
     public void abrirResultado(Filme filme){
         tp.getLbl_filmeNomeR().setText(filme.getNome());
-        tp.getLbl_filmeDescR().setText(filme.getDesc());
+        if(filme.getDesc()== null) tp.getLbl_filmeDescR().setText("Sem descrição");
         tp.getLbl_filmeDuracaoR().setText(filme.getDuracao());
         carregarImagem(filme.getImagem());
         tp.getTrocarTela().trocarFilmeResultado();

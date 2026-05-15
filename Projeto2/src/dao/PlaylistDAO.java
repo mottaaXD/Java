@@ -13,7 +13,7 @@ public class PlaylistDAO {
         this.conn = conn;
     }
 
-    // ================= PLAYLIST =================
+    
 
     public void criarPlaylist(String usuario, String nomePlaylist) throws SQLException {
         String sql = "INSERT INTO playlists (usuario, nomeplaylist) VALUES (?, ?)";
@@ -51,7 +51,7 @@ public class PlaylistDAO {
         conn.close();
     }
 
-    // ================= ITENS =================
+    
 
     public void adicionarItem(int idPlaylist, String tipo, String nomeItem) throws SQLException {
         String sql = "INSERT INTO playlist_itens (id_playlist, tipo, nome_item) VALUES (?, ?, ?)";

@@ -44,9 +44,7 @@ public class ControleSeriesCurtidas {
 
             painel.setLayout(new javax.swing.BoxLayout(painel, javax.swing.BoxLayout.Y_AXIS));
 
-            // =========================
-            // HEADER (SEM ESPAÇO EXAGERADO)
-            // =========================
+            
             JPanel header = new JPanel(new java.awt.BorderLayout());
             header.setMaximumSize(new java.awt.Dimension(Integer.MAX_VALUE, 60));
             header.setPreferredSize(new java.awt.Dimension(0, 60));
@@ -64,12 +62,10 @@ public class ControleSeriesCurtidas {
 
             painel.add(header);
 
-            // pequeno espaço controlado (opcional)
+            
             painel.add(javax.swing.Box.createVerticalStrut(10));
 
-            // =========================
-            // LISTA
-            // =========================
+
             while (rs.next()) {
 
                 String nomeSerie = rs.getString("nome");
@@ -78,12 +74,12 @@ public class ControleSeriesCurtidas {
                 JPanel card = new JPanel();
                 card.setLayout(new javax.swing.BoxLayout(card, javax.swing.BoxLayout.Y_AXIS));
 
-                // FIX: tamanho fixo sem esticar
+                
                 card.setMaximumSize(new java.awt.Dimension(250, 260));
                 card.setPreferredSize(new java.awt.Dimension(250, 260));
                 card.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
 
-                // ================= IMAGEM =================
+                
                 JLabel lblImagem = new JLabel();
 
                 try {
@@ -102,12 +98,12 @@ public class ControleSeriesCurtidas {
 
                 lblImagem.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
 
-                // ================= NOME =================
+                
                 JLabel lblNome = new JLabel(nomeSerie);
                 lblNome.setFont(new java.awt.Font("Arial", java.awt.Font.BOLD, 18));
                 lblNome.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
 
-                // ================= BOTÃO =================
+                
                 JButton btDescurtir = new JButton("Descurtir");
                 btDescurtir.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
 
@@ -127,7 +123,7 @@ public class ControleSeriesCurtidas {
                     }
                 });
 
-                // ================= MONTAGEM =================
+                
                 card.add(lblImagem);
                 card.add(javax.swing.Box.createVerticalStrut(5));
                 card.add(lblNome);
@@ -137,7 +133,7 @@ public class ControleSeriesCurtidas {
                 painel.add(card);
             }
 
-            // refresh final
+            
             painel.revalidate();
             painel.repaint();
 

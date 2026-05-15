@@ -13,7 +13,7 @@ public class CurtidasDAO {
         this.conn = conn;
     }
 
-    // ================== SERIES ==================
+    
 
     public void curtirSerie(String usuario, String nomeSerie) throws SQLException {
         String sql = "INSERT INTO series_curtidas (usuario, nomeserie) VALUES (?, ?)";
@@ -58,7 +58,7 @@ public class CurtidasDAO {
     }
 
 
-    // ================== FILMES ==================
+    
 
     public void curtirFilme(String usuario, String nomeFilme) throws SQLException {
         String sql = "INSERT INTO filmes_curtidos (usuario, nomefilme) VALUES (?, ?)";

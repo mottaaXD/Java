@@ -54,7 +54,7 @@ public class ControleTrocarTela {
     }
     
     
-    //Trocar Telas do Inicio(cadastro, login)....
+    
     public void trocarCadastro(){
         cl.show(telaInicio.getPainelInicio(), "cadastro");
     }
@@ -68,7 +68,7 @@ public class ControleTrocarTela {
     }
     
     
-    //Trocar Telas da tela Principal
+    
     public void trocarAlterarLogin(){
        
         cl2.show(tp.getPainelCardPrincipal(), "telaAlterar");

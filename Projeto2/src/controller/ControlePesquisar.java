@@ -108,7 +108,7 @@ public class ControlePesquisar {
                         mostrarSerie1(true);
                         
                         tp.getLbl_nomeSerie1().setText(resS.getString("nome"));
-  
+                        
                         tp.getLbl_temporadasSerie1().setText(resS.getString("temporadas"));
                         tp.getLbl_episodiosSerie1().setText(resS.getString("episodios"));
                         serie1 = new Serie(resS.getString("nome"),

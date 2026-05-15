@@ -30,14 +30,12 @@ public class ControleFilmesCurtidos {
 
             ResultSet rs = dao.listarFilmesCurtidos(usuario);
 
-            JPanel painel = tp.getListaFilmesCurtidos(); // ⚠️ use o painel interno do scroll
+            JPanel painel = tp.getListaFilmesCurtidos(); 
             painel.removeAll();
 
             painel.setLayout(new javax.swing.BoxLayout(painel, javax.swing.BoxLayout.Y_AXIS));
 
-            // =========================
-            // HEADER
-            // =========================
+            
             JPanel header = new JPanel(new java.awt.BorderLayout());
             header.setMaximumSize(new java.awt.Dimension(Integer.MAX_VALUE, 60));
             header.setPreferredSize(new java.awt.Dimension(0, 60));
@@ -56,9 +54,7 @@ public class ControleFilmesCurtidos {
             painel.add(header);
             painel.add(javax.swing.Box.createVerticalStrut(10));
 
-            // =========================
-            // LISTA
-            // =========================
+            
             while (rs.next()) {
 
                 String nomeFilme = rs.getString("nome");
@@ -70,12 +66,12 @@ public class ControleFilmesCurtidos {
                 JPanel card = new JPanel();
                 card.setLayout(new javax.swing.BoxLayout(card, javax.swing.BoxLayout.Y_AXIS));
 
-                // FIX tamanho consistente
+                
                 card.setMaximumSize(new java.awt.Dimension(250, 260));
                 card.setPreferredSize(new java.awt.Dimension(250, 260));
                 card.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
 
-                // ================= IMAGEM =================
+                
                 JLabel lblImagem = new JLabel();
 
                 try {
@@ -94,12 +90,12 @@ public class ControleFilmesCurtidos {
 
                 lblImagem.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
 
-                // ================= NOME =================
+                
                 JLabel lblNome = new JLabel(nomeFilmeFinal);
                 lblNome.setFont(new java.awt.Font("Arial", java.awt.Font.BOLD, 18));
                 lblNome.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
 
-                // ================= BOTÃO =================
+                
                 JButton btDescurtir = new JButton("Descurtir");
                 btDescurtir.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
 
@@ -119,7 +115,7 @@ public class ControleFilmesCurtidos {
                     }
                 });
 
-                // ================= MONTAGEM =================
+                
                 card.add(lblImagem);
                 card.add(javax.swing.Box.createVerticalStrut(5));
                 card.add(lblNome);

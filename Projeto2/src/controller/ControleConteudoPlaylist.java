@@ -1,8 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controller;
+
 import dao.Conexao;
 import dao.PlaylistDAO;
 import view.TelaPrincipal;
@@ -10,11 +7,9 @@ import view.TelaPrincipal;
 import javax.swing.*;
 import java.awt.*;
 import java.sql.*;
-/**
- *
- * @author Usuario
- */
+
 public class ControleConteudoPlaylist {
+
     private TelaPrincipal tp;
 
     public ControleConteudoPlaylist(TelaPrincipal tp) {
@@ -23,6 +18,7 @@ public class ControleConteudoPlaylist {
 
     public void carregarConteudoPlaylist(int idPlaylist, String nomePlaylist) {
         System.out.println("ABRINDO PLAYLIST: ");
+
         try {
             Connection conn = new Conexao().getConnection();
             PlaylistDAO dao = new PlaylistDAO(conn);
@@ -31,39 +27,33 @@ public class ControleConteudoPlaylist {
 
             JPanel painel = tp.getListaConteudoPlaylist();
             painel.removeAll();
-
             painel.setLayout(new BoxLayout(painel, BoxLayout.Y_AXIS));
 
-            // ================= HEADER =================
-            JLabel titulo = new JLabel(nomePlaylist);
-            titulo.setFont(new Font("Arial", Font.BOLD, 28));
-            titulo.setAlignmentX(Component.CENTER_ALIGNMENT);
             
- 
             JPanel header = new JPanel(new BorderLayout());
             header.setMaximumSize(new Dimension(Integer.MAX_VALUE, 60));
             header.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
 
-            // botão esquerda
-            JButton btVoltarMenu5 = new JButton("Voltar");
-            btVoltarMenu5.addActionListener(e -> tp.getTrocarTela().trocarPlaylists());
-            btVoltarMenu5.setFont(new Font("Arial", Font.BOLD, 24));
             
-            
-            header.add(btVoltarMenu5, BorderLayout.WEST);
+            JButton btVoltar = new JButton("Voltar");
+            btVoltar.setFont(new Font("Arial", Font.BOLD, 20));
+            btVoltar.addActionListener(e -> tp.getTrocarTela().trocarPlaylists());
+            header.add(btVoltar, BorderLayout.WEST);
 
-            // título central
-            JLabel titulo2 = new JLabel(nomePlaylist);
+            
+            JPanel centerPanel = new JPanel(new GridBagLayout());
+            centerPanel.setOpaque(false);
+
+            JLabel titulo = new JLabel(nomePlaylist);
             titulo.setFont(new Font("Arial", Font.BOLD, 28));
-            titulo.setHorizontalAlignment(SwingConstants.CENTER);
 
-            header.add(titulo, BorderLayout.CENTER);
+            centerPanel.add(titulo);
+            header.add(centerPanel, BorderLayout.NORTH);
 
-            // adiciona no painel principal
             painel.add(header);
             painel.add(Box.createVerticalStrut(10));
 
-            // ================= LISTA =================
+            
             while (rs.next()) {
 
                 String tipo = rs.getString("tipo");
@@ -72,10 +62,8 @@ public class ControleConteudoPlaylist {
                 JPanel card = new JPanel();
                 card.setLayout(new BoxLayout(card, BoxLayout.Y_AXIS));
                 card.setAlignmentX(Component.CENTER_ALIGNMENT);
-
                 card.setMaximumSize(new Dimension(250, 250));
 
-                // ICON (opcional simples)
                 JLabel lblTipo = new JLabel(tipo.toUpperCase());
                 lblTipo.setFont(new Font("Arial", Font.BOLD, 14));
                 lblTipo.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -85,7 +73,6 @@ public class ControleConteudoPlaylist {
                 lblNome.setAlignmentX(Component.CENTER_ALIGNMENT);
 
                 JButton btRemover = new JButton("Remover");
-
                 btRemover.setAlignmentX(Component.CENTER_ALIGNMENT);
 
                 btRemover.addActionListener(e -> {
