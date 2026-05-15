@@ -21,6 +21,7 @@ import controller.ControlePesquisar;
 import controller.ControleFilmeResultado;
 import controller.ControleFilmesCurtidos;
 import controller.ControleSeriesCurtidas;
+import controller.ControleListarPlaylist;
 
 
 public class ControleTrocarTela {
@@ -32,6 +33,7 @@ public class ControleTrocarTela {
     private ControleFilmeResultado cfr;
     private ControleFilmesCurtidos cfc;
     private ControleSeriesCurtidas csc;
+    private ControleListarPlaylist clp;
     
     private ControlePesquisar cPesc;
     
@@ -48,6 +50,7 @@ public class ControleTrocarTela {
         this.cfr = new ControleFilmeResultado(tp);
         this.cfc = new ControleFilmesCurtidos(tp);
         this.csc = new ControleSeriesCurtidas(tp);
+        this.clp = new ControleListarPlaylist(tp);
     }
     
     
@@ -107,6 +110,11 @@ public class ControleTrocarTela {
     
     public void trocarPlaylists(){
         cl2.show(tp.getPainelCardPrincipal(), "playlists");
+    }
+    
+    public void trocarListaPlaylists(){
+        clp.abrirTelaPlaylists();
+        cl2.show(tp.getPainelCardPrincipal(), "listaPlaylist");
     }
     
     public void trocarConteudoPlay(){

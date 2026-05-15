@@ -38,9 +38,30 @@ public class ControleConteudoPlaylist {
             JLabel titulo = new JLabel(nomePlaylist);
             titulo.setFont(new Font("Arial", Font.BOLD, 28));
             titulo.setAlignmentX(Component.CENTER_ALIGNMENT);
+            
+ 
+            JPanel header = new JPanel(new BorderLayout());
+            header.setMaximumSize(new Dimension(Integer.MAX_VALUE, 60));
+            header.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
 
-            painel.add(titulo);
-            painel.add(Box.createVerticalStrut(15));
+            // botão esquerda
+            JButton btVoltarMenu5 = new JButton("Voltar");
+            btVoltarMenu5.addActionListener(e -> tp.getTrocarTela().trocarPlaylists());
+            btVoltarMenu5.setFont(new Font("Arial", Font.BOLD, 24));
+            
+            
+            header.add(btVoltarMenu5, BorderLayout.WEST);
+
+            // título central
+            JLabel titulo2 = new JLabel(nomePlaylist);
+            titulo.setFont(new Font("Arial", Font.BOLD, 28));
+            titulo.setHorizontalAlignment(SwingConstants.CENTER);
+
+            header.add(titulo, BorderLayout.CENTER);
+
+            // adiciona no painel principal
+            painel.add(header);
+            painel.add(Box.createVerticalStrut(10));
 
             // ================= LISTA =================
             while (rs.next()) {

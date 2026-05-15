@@ -11,6 +11,8 @@ import javax.swing.*;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import controller.ControleConteudoPlaylist;
+import java.awt.Font;
+
 
 /**
  *
@@ -18,6 +20,7 @@ import controller.ControleConteudoPlaylist;
  */
 public class ControleListarPlaylist {
     private TelaPrincipal tp;
+
     public ControleListarPlaylist(TelaPrincipal tp) {
         this.tp = tp;
         
@@ -33,9 +36,15 @@ public class ControleListarPlaylist {
 
             ResultSet rs = dao.listarPlaylists(usuario);
 
-            JPanel painel = tp.getPainelPlaylists();
+            JPanel painel = tp.getListaPlaylists();
             painel.removeAll();
             painel.setLayout(new BoxLayout(painel, BoxLayout.Y_AXIS));
+            
+            JButton btVoltarMenu = new JButton("Voltar");
+            btVoltarMenu.addActionListener(e -> tp.getTrocarTela().trocarPlaylists());
+            btVoltarMenu.setFont(new Font("Arial", Font.BOLD, 24));
+            painel.add(btVoltarMenu);
+            painel.add(Box.createVerticalStrut(10));
 
             while (rs.next()) {
 
@@ -57,7 +66,6 @@ public class ControleListarPlaylist {
             painel.revalidate();
             painel.repaint();
 
-            tp.getTrocarTela().trocarPlaylists();
 
         } catch (Exception e) {
             e.printStackTrace();
