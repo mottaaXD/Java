@@ -9,7 +9,7 @@ Este documento é um relatório sobre o projeto programado em Java sobre catálo
 3. [Estrutura de Pacotes e Componentes](#-estrutura-de-pacotes-e-componentes)
     - [Model (Entidades)](#-model-Entidades)
     - [DAO (Acesso ao Banco de Dados)](#-dao-acesso-ao-banco-de-dados)
-    - [Controller (Controladores de Fluxo)](#-controller-controladores-de-fluxo)
+    - [Controller (Controladores de Interação)](#-controller-controladores-de-interação)
     - [View (Interface Gráfica)](#-view-interface-gráfica)
 4. [Diagrama Lógico e Fluxo de Execução](#-diagrama-lógico-e-fluxo-de-execução)
 5. [Modelagem do Banco de Dados](#-modelagem-do-banco-de-dados)
