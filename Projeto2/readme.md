@@ -11,9 +11,9 @@ Este documento é um relatório sobre o projeto programado em Java sobre catálo
     - [DAO (Acesso ao Banco de Dados)](#-dao-acesso-ao-banco-de-dados)
     - [Controller (Controladores de Interação)](#-controller-controladores-de-interação)
     - [View (Interface Gráfica)](#-view-interface-gráfica)
-4. [Diagrama Lógico e Fluxo de Execução](#-diagrama-lógico-e-fluxo-de-execução)
+4. [Funcionalidades e Regras de Negócio](#-funcionalidades-e-regras-de-negócio)
 5. [Modelagem do Banco de Dados](#-modelagem-do-banco-de-dados)
-6. [Funcionalidades e Regras de Negócio](#-funcionalidades-e-regras-de-negócio)
+6. [Diagrama Lógico e Fluxo de Execução](#-diagrama-lógico-e-fluxo-de-execução)
 7. [Instruções para Execução (Setup)](#-instruções-para-execução-setup)
 
 
@@ -81,5 +81,22 @@ Classes que concentram os componentes visuais (Botões, TextFields, Panels).
 
 ### 📦 `main`
 * **`Main.java`**: Classe responsável por instanciar `TelaInicio`.
+
+---
+
+
+## ⚙️ Funcionalidades
+
+1. **Gestão de Sessão do Usuário**:
+   A sessão é iniciada na `TelaInicio` onde o `ControleLogin` consulta o banco. Ao logar com sucesso, a variável "usuario" é persistida na memória, e todas as interações com banco de dados (curtir, adicionar a playlist) passam a usar a chave deste usuário.
+
+2. **Sistema de Favoritos (Curtidas)**:
+   Em `ControleFilmeResultado` e `ControleSerieResultado`, existe uma função de "Curtir". Ao clicar, o `ControleFilmesCurtidos` comunica o `CurtidasDAO`, que grava a variavel "usuario" do usuario logado e o "nome" do item na tabela "filme_curtidos" ou "series_curtidas".
+
+3. **Arquitetura de Playlists Dinâmicas**:
+   A gestão de playlists possui fluxo em 3 etapas:
+   * **Criação**: O usuário define um nome e gera um ID de Playlist vazio (`ControlePlaylist`).
+   * **Inclusão**: Ao navegar pelos detalhes do filme/série, o usuário ativa o `ControleSeletorPlaylist`, escolhe uma das playlists já existentes e injeta o nome do filme/série nela.
+   * **Consumo**: Na área do usuário, `ControleListarPlaylist` exibe os nomes das playlists, e, ao clicar, `ControleConteudoPlaylist` faz o Join via DAO para trazer os itens da lista.
 
 ---
