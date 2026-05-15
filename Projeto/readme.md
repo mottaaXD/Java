@@ -113,3 +113,18 @@ Baseado nas implementações do DAO, o banco de dados PostgreSQL possui uma mode
 * **Tabela `playlist_itens`** (`id_playlist` PK, `tipo`, `nome_item`)
 
 ---
+
+## ♨️ Instruções para Execução
+
+**Pré-requisitos**
+* Apache Netbeans 12.6(versão mínima)
+* JDK 17
+* Servidor PostgreSQL rodando
+* PGAdmin
+
+**Etapas**
+1. Baixar e extrair o **`.zip`** do repositório.
+2. Entrar no PGAdmin e criar a database **teste** e clicar para **restaurar** selecionando o arquivo **`teste.sql`**.
+3. Criar a conexão entre o Netbeans e o banco de dados
+4. Abrir Apache Netbeans e editar a porta correspondente ao servidor que criou.
+5. Rodar o programa
